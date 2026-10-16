@@ -16,7 +16,7 @@ result.
 > code you did not write yourself: read it before you rely on it. The Luxembourgish it speaks
 > and corrects was checked against the LOD dictionary, not by a native speaker.
 
-Licensed under the GNU General Public License v3.0 or later: see [LICENSE](LICENSE) and
+Licensed under the GNU Affero General Public License v3.0 or later: see [LICENSE](LICENSE) and
 "Licences" below.
 
 ## Requirements
@@ -1015,10 +1015,12 @@ read it:
 ## Licences
 
 Copyright (C) 2026 brickbat101. This program is free software: you can redistribute it and/or
-modify it under the terms of the GNU General Public License as published by the Free Software
-Foundation, either version 3 of the License, or (at your option) any later version. It is
-distributed WITHOUT ANY WARRANTY; see [LICENSE](LICENSE). The app uses piper-tts, which is
-GPL-3.0-or-later. That licence covers this repository's code only: the models, the voices and
+modify it under the terms of the GNU Affero General Public License as published by the Free
+Software Foundation, either version 3 of the License, or (at your option) any later version. It
+is distributed WITHOUT ANY WARRANTY; see [LICENSE](LICENSE). If you run a modified version as a
+service other people use over a network, you must offer them its source. The app uses
+piper-tts, which is GPL-3.0-or-later; section 13 of both licences lets the two be combined. That
+licence covers this repository's code only: the models, the voices and
 the dictionary data are downloaded separately and keep their own licences, listed below. The
 Luxembourgish voice is non-commercial (CC BY-NC-SA 4.0), so audio made with it may not be used
 commercially.
