@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="loci-token" content="">
+  <title data-i18n="page.title">Luxembourgish voice tutor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1 data-i18n="header.h1">Luxembourgish voice tutor</h1>
+    <select id="lang" aria-label="Interface language" data-i18n-attr="aria-label:header.lang">
+      <option value="en">English</option>
+      <option value="fr">Français</option>
+    </select>
+    <p id="ai-notice" class="notice" data-i18n="notice.ai">You are talking to an AI tutor, not a person. The voices are computer-generated, and the Luxembourgish can contain mistakes.</p>
+  </header>
+  <div id="banner" class="banner" role="alert" hidden></div>
+  <main>
+  <div class="layout">
+    <section id="log" class="log" aria-label="Conversation" aria-live="polite" data-i18n-attr="aria-label:log.aria"></section>
+
+    <aside class="side">
+      <h2 data-i18n="side.new_this_session">New this session</h2>
+      <p id="no-new" class="muted" data-i18n="side.nothing_yet">Nothing yet.</p>
+      <ul id="new-phrases"></ul>
+      <details id="data" class="data" open>
+        <summary data-i18n="data.summary">Data</summary>
+        <p id="data-kept">-</p>
+        <p class="muted note" data-i18n="data.note">Everything the app keeps about you stays on this PC: the phrases you met,
+          every practice answer you confirm with its recording and what the tutor said to it, and your reviews.</p>
+        <p id="data-where" class="muted note"></p>
+        <p class="controls"><button id="data-export" type="button" data-i18n="data.export">Export</button>
+          <span id="data-controls"></span></p>
+      </details>
+      <details id="progress" class="progress">
+        <summary data-i18n="progress.summary">Progress</summary>
+        <p id="progress-problem" class="muted note" hidden></p>
+        <dl id="progress-figures"></dl>
+        <p class="muted note" data-i18n="progress.note">Minutes count the recordings whose length the app keeps; until it keeps
+          them for every answer, this can stay at 0 min.</p>
+        <table id="progress-corrections"></table>
+        <p class="heading" data-i18n="progress.topics_heading">Practice topics: questions answered</p>
+        <ul id="progress-topics"></ul>
+      </details>
+      <details id="pronunciation" class="pronunciation">
+        <summary data-i18n="pronunciation.summary">Pronunciation</summary>
+        <p id="pronunciation-problem" class="muted note" hidden></p>
+        <p id="pronunciation-empty" class="muted note" data-i18n="pronunciation.empty">No flagged words yet. Use the flag button under a tutor line to flag a word that was said wrongly.</p>
+        <p class="muted note" data-i18n="pronunciation.note">Play speaks the line again with your respelling. Nothing is kept until you press Save.</p>
+        <ul id="pronunciation-flags"></ul>
+      </details>
+      <details id="voice" class="voice">
+        <summary data-i18n="voice.summary">Voice</summary>
+        <fieldset>
+          <legend data-i18n="voice.legend_talk">Talk button</legend>
+          <label class="check"><input id="talk-toggle" type="checkbox" role="switch"> <span data-i18n="voice.talk_toggle">Press once to talk, press again to stop</span></label>
+        </fieldset>
+        <fieldset>
+          <legend data-i18n="voice.legend_lb">Luxembourgish</legend>
+          <label for="voice-lb-rate"><span data-i18n="voice.speed">Speed</span> <output id="voice-lb-rate-value" for="voice-lb-rate"></output></label>
+          <input id="voice-lb-rate" type="range" step="0.05" disabled>
+          <label for="voice-lb-pitch"><span data-i18n="voice.pitch">Pitch</span> <output id="voice-lb-pitch-value" for="voice-lb-pitch"></output></label>
+          <input id="voice-lb-pitch" type="range" step="0.5" disabled>
+          <label for="voice-lb-volume"><span data-i18n="voice.volume">Volume</span> <output id="voice-lb-volume-value" for="voice-lb-volume"></output></label>
+          <input id="voice-lb-volume" type="range" step="0.05" disabled>
+          <button id="voice-lb-sample" type="button" disabled data-i18n="voice.sample">Play sample</button>
+        </fieldset>
+        <fieldset>
+          <legend data-i18n="voice.legend_en">English</legend>
+          <label for="voice-en-rate"><span data-i18n="voice.speed">Speed</span> <output id="voice-en-rate-value" for="voice-en-rate"></output></label>
+          <input id="voice-en-rate" type="range" step="0.05" disabled>
+          <label for="voice-en-pitch"><span data-i18n="voice.pitch">Pitch</span> <output id="voice-en-pitch-value" for="voice-en-pitch"></output></label>
+          <input id="voice-en-pitch" type="range" step="0.5" disabled>
+          <label for="voice-en-volume"><span data-i18n="voice.volume">Volume</span> <output id="voice-en-volume-value" for="voice-en-volume"></output></label>
+          <input id="voice-en-volume" type="range" step="0.05" disabled>
+          <button id="voice-en-sample" type="button" disabled data-i18n="voice.sample">Play sample</button>
+        </fieldset>
+        <button id="voice-reset" type="button" disabled data-i18n="voice.reset">Reset</button>
+      </details>
+    </aside>
+
+    <section class="dock" aria-label="Message controls" data-i18n-attr="aria-label:dock.aria">
+      <div class="statusrow">
+        <div id="status" class="status" role="status" data-i18n="status.starting">starting...</div>
+        <button id="play" type="button" hidden data-i18n="dock.play">Play</button>
+      </div>
+      <audio id="player"></audio>
+      <div id="practice-panel" class="practice" hidden>
+        <div id="practice-pick">
+          <p id="practice-intro" class="muted"></p>
+          <fieldset id="practice-setting" class="setting">
+            <legend class="muted" data-i18n="practice.setting_legend">How the talk runs</legend>
+            <label><input type="radio" name="setting" value="relaxed" checked> <span data-i18n="practice.relaxed">Relaxed</span></label>
+            <label>
+              <input type="radio" name="setting" value="realistic"> <span data-i18n="practice.realistic">Realistic - a 10-minute clock runs while you talk</span>
+            </label>
+          </fieldset>
+          <div id="practice-topics" class="topics"></div>
+          <div id="practice-photos" class="photos"></div>
+        </div>
+        <div class="beside">
+          <figure id="practice-photo" class="photo" hidden></figure>
+          <div id="practice-card" class="card" hidden>
+            <p id="practice-where" class="muted where"></p>
+            <p id="practice-clock" class="muted clock" hidden></p>
+            <p id="practice-clock-over" class="muted" hidden data-i18n="practice.clock_over">
+              The ten minutes of the real talk are over - carry on as long as you like.
+            </p>
+            <p id="practice-question" class="question" lang="lb"></p>
+            <p id="practice-english" class="english" lang="en" hidden></p>
+            <button id="practice-help" type="button" data-i18n="practice.help">What was that in English?</button>
+          </div>
+        </div>
+        <div class="row">
+          <button id="practice-stop" type="button" hidden data-i18n="practice.stop">Stop here</button>
+          <button id="practice-leave" type="button" data-i18n="practice.leave">Leave practice</button>
+          <span class="muted footnote" data-i18n="practice.footnote">Not affiliated with INLL. Questions and corrections are not reviewed
+            by a native speaker.</span>
+        </div>
+      </div>
+      <div id="review-panel" class="review" hidden>
+        <div id="review-card" class="card">
+          <p id="review-counts" class="muted where"></p>
+          <p id="review-gloss" class="question"></p>
+          <p id="review-hint" class="muted" hidden></p>
+          <div id="review-result" class="result" hidden>
+            <div>
+              <p class="muted" data-i18n="review.in_lb">In Luxembourgish</p>
+              <p id="review-expected" class="expected" lang="lb"></p>
+            </div>
+            <div>
+              <p class="muted" data-i18n="review.you_said">You said</p>
+              <p id="review-said"></p>
+            </div>
+          </div>
+          <p id="review-good" class="good" hidden data-i18n="review.good">Good</p>
+          <div id="review-ratings" class="ratings" hidden>
+            <button type="button" data-rating="1" data-i18n="review.again">Again</button>
+            <button type="button" data-rating="2" data-i18n="review.hard">Hard</button>
+            <button type="button" data-rating="3" data-i18n="review.rate_good">Good</button>
+            <button type="button" data-rating="4" data-i18n="review.easy">Easy</button>
+          </div>
+        </div>
+        <div class="row">
+          <button id="review-override" type="button" hidden data-i18n="review.override">I did not know it</button>
+          <button id="review-next" type="button" hidden data-i18n="review.next">Next</button>
+          <button id="review-leave" type="button" data-i18n="review.leave">Leave review</button>
+        </div>
+      </div>
+      <div id="listening-panel" class="listening" hidden>
+        <div id="listening-pick">
+          <p class="muted" data-i18n="listening.intro">Listen to a short recording at 1x or 0.75x, as often as you like, and answer its
+            questions. The transcript comes after your answers.</p>
+          <div id="listening-items" class="topics"></div>
+        </div>
+        <div id="listening-card" class="card" hidden>
+          <p id="listening-title" class="question"></p>
+          <div class="row">
+            <button id="listening-play-normal" type="button" data-i18n="listening.play_normal">Play 1x</button>
+            <button id="listening-play-slow" type="button" data-i18n="listening.play_slow">Play 0.75x</button>
+          </div>
+          <p id="listening-wait" class="muted" data-i18n="listening.wait">The questions come with the recording.</p>
+          <div id="listening-questions"></div>
+          <p id="listening-result" class="result" hidden></p>
+          <ol id="listening-transcript" class="transcript" hidden></ol>
+          <div class="row">
+            <button id="listening-check" type="button" hidden disabled data-i18n="listening.check">Check my answers</button>
+            <button id="listening-another" type="button" hidden data-i18n="listening.another">Another item</button>
+          </div>
+        </div>
+        <div class="row">
+          <button id="listening-leave" type="button" data-i18n="listening.leave">Leave listening</button>
+          <span class="muted footnote" data-i18n="listening.footnote">Not affiliated with INLL. Scripts and questions are not reviewed by a native speaker.</span>
+        </div>
+      </div>
+      <button id="talk" type="button" class="talk" data-i18n="dock.talk_hold">Hold to talk</button>
+      <p id="talk-hint" class="muted hint" data-i18n="dock.hint_hold">Hold the button or the space bar while you speak, or type below.</p>
+      <textarea id="transcript" rows="3" aria-label="Your message"
+        placeholder="What you said appears here. You can edit it, or type a message."
+        data-i18n-attr="aria-label:dock.message_aria;placeholder:dock.placeholder"></textarea>
+      <div class="row">
+        <button id="send" type="button" data-i18n="dock.send">Send</button>
+        <button id="listening" type="button" aria-pressed="false"
+          title="Hear a short recording and answer its questions"
+          data-i18n="dock.listening" data-i18n-attr="title:dock.listening_title">Listening</button>
+        <button id="practice" type="button" aria-pressed="false"
+          title="Talk about a topic, question by question"
+          data-i18n="dock.practice" data-i18n-attr="title:dock.practice_title">Practice</button>
+        <button id="review" type="button" aria-pressed="false"
+          title="Say again what you have met, from its English"
+          data-i18n="dock.review" data-i18n-attr="title:dock.review_title">Review</button>
+        <button id="teacher" type="button" aria-pressed="false"
+          title="Ask the next message as a grammar question"
+          data-i18n="dock.teacher" data-i18n-attr="title:dock.teacher_title">Teacher</button>
+        <label class="mix" for="mix"><span data-i18n="dock.mix">Luxembourgish mix</span>
+          <input id="mix" type="range" min="0" max="3" step="1" value="0" disabled>
+          <output id="mix-value" for="mix"></output>
+        </label>
+        <label class="check"><input id="autosend" type="checkbox" checked> <span data-i18n="dock.autosend">auto-send after speaking</span></label>
+      </div>
+    </section>
+  </div>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

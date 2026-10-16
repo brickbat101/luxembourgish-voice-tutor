@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Three excerpts of new_lod-tab.xml (LOD Flexiounstabellen, CC0): GOEN1 in full,
+     AUSFLEIEN1 and AL1 shortened. -->
+<tables>
+	<inflection>
+		<verbConjugation id="GOEN1" model="GOEN1" separableVerb="no">
+			<infinitive>goen</infinitive>
+			<pastParticiple>gaangen / gaang</pastParticiple>
+			<auxiliaryVerb>sinn</auxiliaryVerb>
+			<indicative>
+				<present>
+					<p1>ginn</p1>
+					<p2>gees</p2>
+					<p3>geet</p3>
+					<p4>ginn</p4>
+					<p5>gitt</p5>
+					<p6>ginn</p6>
+				</present>
+				<pastSimple>
+					<p1>goung</p1>
+					<p2>goungs</p2>
+					<p3>goung</p3>
+					<p4>goungen</p4>
+					<p5>goungt</p5>
+					<p6>goungen</p6>
+				</pastSimple>
+				<presentPerfect>
+					<p1>si gaangen / gaang</p1>
+					<p2>bass gaangen / gaang</p2>
+					<p3>ass gaangen / gaang</p3>
+					<p4>si gaangen / gaang</p4>
+					<p5>sidd gaangen / gaang</p5>
+					<p6>si gaangen / gaang</p6>
+				</presentPerfect>
+				<pastPerfect>
+					<p1>war gaangen / gaang</p1>
+					<p2>waars gaangen / gaang</p2>
+					<p3>war gaangen / gaang</p3>
+					<p4>ware gaangen / gaang</p4>
+					<p5>waart gaangen / gaang</p5>
+					<p6>ware gaangen / gaang</p6>
+				</pastPerfect>
+			</indicative>
+			<conditional>
+				<presentSimple>
+					<p1>géing</p1>
+					<p2>géings</p2>
+					<p3>géing</p3>
+					<p4>géingen</p4>
+					<p5>géingt</p5>
+					<p6>géingen</p6>
+				</presentSimple>
+				<presentPerfect>
+					<p1>géif / géing goen</p1>
+					<p2>géifs / géings goen</p2>
+					<p3>géif / géing goen</p3>
+					<p4>géifen / géinge goen</p4>
+					<p5>géift / géingt goen</p5>
+					<p6>géifen / géinge goen</p6>
+				</presentPerfect>
+				<pastPerfect>
+					<p1>wier gaangen / gaang</p1>
+					<p2>wiers gaangen / gaang</p2>
+					<p3>wier gaangen / gaang</p3>
+					<p4>wiere gaangen / gaang</p4>
+					<p5>wiert gaangen / gaang</p5>
+					<p6>wiere gaangen / gaang</p6>
+				</pastPerfect>
+			</conditional>
+			<imperative>
+				<present>
+					<p2>géi!</p2>
+					<p5>gitt!</p5>
+				</present>
+			</imperative>
+		</verbConjugation>
+	</inflection>
+	<inflection>
+		<verbConjugation id="AUSFLEIEN1" model="ZEIEN2" separableVerb="yes">
+			<infinitive>ausfléien</infinitive>
+			<pastParticiple>ausgeflunn</pastParticiple>
+			<auxiliaryVerb>sinn</auxiliaryVerb>
+			<indicative>
+				<present>
+					<p3>flitt aus</p3>
+					<p6>fléien aus</p6>
+				</present>
+				<presentPerfect>
+					<p3>ass ausgeflunn</p3>
+					<p6>sinn ausgeflunn</p6>
+				</presentPerfect>
+			</indicative>
+			<auxiliaryVerb>hunn</auxiliaryVerb>
+			<indicative>
+				<present>
+					<p1>fléien aus</p1>
+					<p2>flitts aus</p2>
+					<p3>flitt aus</p3>
+					<p4>fléien aus</p4>
+					<p5>flitt aus</p5>
+					<p6>fléien aus</p6>
+				</present>
+				<presentPerfect>
+					<p1>hunn ausgeflunn</p1>
+					<p2>hues ausgeflunn</p2>
+					<p3>huet ausgeflunn</p3>
+					<p4>hunn ausgeflunn</p4>
+					<p5>hutt ausgeflunn</p5>
+					<p6>hunn ausgeflunn</p6>
+				</presentPerfect>
+			</indicative>
+			<imperative>
+				<present>
+					<p2>fléi aus!</p2>
+					<p5>flitt aus!</p5>
+				</present>
+			</imperative>
+		</verbConjugation>
+	</inflection>
+	<inflection>
+		<adjDeclension id="AL1">
+			<basicForms>
+				<positive>al</positive>
+				<comparative>méi al</comparative>
+				<superlative>am eelsten</superlative>
+			</basicForms>
+			<declension>
+				<positive>
+					<singular>
+						<masculine>
+							<nominative>alen</nominative>
+							<accusative>alen</accusative>
+							<dative>alen</dative>
+							<genitive>alen</genitive>
+						</masculine>
+						<feminine>
+							<nominative>al</nominative>
+							<accusative>al</accusative>
+							<dative>aler</dative>
+							<genitive>aler</genitive>
+						</feminine>
+						<neutral>
+							<nominative>aalt</nominative>
+							<accusative>aalt</accusative>
+							<dative>alen</dative>
+							<genitive>alen</genitive>
+						</neutral>
+					</singular>
+					<plural>
+						<masculineFeminineNeutral>
+							<nominative>al</nominative>
+							<accusative>al</accusative>
+							<dative>alen</dative>
+							<genitive>aler</genitive>
+						</masculineFeminineNeutral>
+					</plural>
+				</positive>
+			</declension>
+		</adjDeclension>
+	</inflection>
+</tables>

@@ -1,0 +1,832 @@
+# What the tutor says in practice mode. The app reads this file when it starts; restart it
+# after an edit. Not reviewed by a native speaker.
+#
+# A line ending in _lb is Luxembourgish, the line of the same name ending in _en its English.
+# tests/test_practice.py checks every Luxembourgish word here against the LOD dictionary.
+
+[tutor]
+# {topic} is replaced by the topic's name_lb in open_lb and by its name_en in open_en.
+open_lb = "Moien! Haut schwätze mir iwwer d'Theema {topic}. Mir fänke ganz allgemeng un."
+open_en = "Hi! Today we talk about the topic {topic}. We start very generally."
+# Said after an answer the tutor has no reaction to: a second "I don't know", or an answer
+# whose reaction could not be made.
+ack_en = "Got it."
+# Around a correction, after the tutor's reaction: said_en, the learner's own words, the
+# reason, the better version. better_en stands in for a reason that is missing.
+said_en = "One small thing. You said"
+better_en = "it would be:"
+# After an answer in English, in front of the Luxembourgish for it.
+could_say_en = "In Luxembourgish you could say"
+# Asks for more after a short answer, once per question.
+more_lb = "Kënnt Dir e bësse méi dozou soen?"
+more_en = "Can you say a bit more about that?"
+# After "I don't know": {question_en} is the English of the question. starter_en follows when
+# the question has a starter, and then the starter itself.
+again_en = "No problem. The question was: {question_en}"
+starter_en = "You could start with:"
+# After the last question of the topic the learner picks one of three photos (photos.toml).
+# photo_intro is said with the three on the page. Then three questions about the picked one:
+# photo, the photo's own question from photos.toml, photo_last.
+photo_intro_lb = "Elo kucke mir e Bild. Sicht Iech eent eraus."
+photo_intro_en = "Now let's look at a picture. Pick one."
+photo_lb = "Wat gesitt Dir um Bild? Wien ass do, a wat maachen d'Leit?"
+photo_en = "What do you see in the picture? Who is there, and what are the people doing?"
+photo_last_lb = "Wéi fannt Dir dat Bild?"
+photo_last_en = "How do you like the picture?"
+end_en = "That's all for today, thanks for talking with me."
+# The look back on a talk, after "Stop here" or after its last question: the tutor's own
+# sentences, then once_more_en and the better versions of the talk again. After "Stop here"
+# end_en follows; a talk that ran to its end has had it.
+once_more_en = "Once more:"
+# The whole look back when the learner stopped before the first answer.
+no_answers_en = "No worries, we'll leave it there. Come back whenever you feel like a chat."
+# The one question every sentence of the LB-JUDGE set is judged as an answer to
+# (scripts/lb_judge.py run); never asked in a talk.
+eval_lb = "Sot mir eppes."
+eval_en = "Tell me something."
+# Said once, after the opening, in front of the first question of the warm-up.
+warmup_lb = "Fir den Ufank e puer kuerz Froen."
+warmup_en = "A few short questions to start."
+
+# Said once, in front of the first question of the stage.
+[tutor.stage]
+past_lb = "Elo schwätze mir iwwer fréier."
+past_en = "Now let's talk about the past."
+present_lb = "A wéi ass et haut?"
+present_en = "And how is it today?"
+plans_lb = "A wat sinn Är Pläng?"
+plans_en = "And what are your plans?"
+
+# A talk opens with two of these, drawn at random, before the questions of its topic; the
+# next talk of the session draws others first. `starter` is optional: how an answer could begin.
+
+[[warmup]]
+id = "warmup-1"
+lb = "Wéi heescht Dir?"
+en = "What is your name?"
+starter = "Ech heeschen ..."
+
+[[warmup]]
+id = "warmup-2"
+lb = "Wou wunnt Dir?"
+en = "Where do you live?"
+starter = "Ech wunnen zu ..."
+
+[[warmup]]
+id = "warmup-3"
+lb = "Vu wou kommt Dir?"
+en = "Where are you from?"
+starter = "Ech kommen aus ..."
+
+[[warmup]]
+id = "warmup-4"
+lb = "Wat fir Sprooche schwätzt Dir?"
+en = "Which languages do you speak?"
+starter = "Ech schwätzen ..."
+
+[[warmup]]
+id = "warmup-5"
+lb = "Wéi geet et Iech haut?"
+en = "How are you today?"
+starter = "Et geet mir ..."
+
+[[warmup]]
+id = "warmup-6"
+lb = "Firwat léiert Dir Lëtzebuergesch?"
+en = "Why are you learning Luxembourgish?"
+starter = "Ech léiere Lëtzebuergesch, well ..."
+
+# A topic has its questions in the order they are asked. `stage` is general, past, present
+# or plans, in that order. `starter` is optional: how an answer could begin.
+
+[[topic]]
+id = "aarbecht"
+name_lb = "Aarbecht"
+name_en = "Work"
+
+[[topic.question]]
+id = "aarbecht-1"
+stage = "general"
+lb = "Wat schafft Dir?"
+en = "What do you do for work?"
+starter = "Ech schaffen als ..."
+
+[[topic.question]]
+id = "aarbecht-2"
+stage = "general"
+lb = "Wou schafft Dir?"
+en = "Where do you work?"
+starter = "Ech schaffen zu ..."
+
+[[topic.question]]
+id = "aarbecht-3"
+stage = "past"
+lb = "Wat hutt Dir fréier geschafft?"
+en = "What work did you do before?"
+starter = "Fréier hunn ech als ... geschafft."
+
+[[topic.question]]
+id = "aarbecht-4"
+stage = "past"
+lb = "Wat war Är éischt Aarbecht?"
+en = "What was your first job?"
+starter = "Meng éischt Aarbecht war ..."
+
+[[topic.question]]
+id = "aarbecht-5"
+stage = "present"
+lb = "Wéi gefält Iech Är Aarbecht?"
+en = "How do you like your job?"
+starter = "Meng Aarbecht gefält mir, well ..."
+
+[[topic.question]]
+id = "aarbecht-6"
+stage = "present"
+lb = "Wéi kommt Dir op d'Aarbecht?"
+en = "How do you get to work?"
+starter = "Ech fuere mam ..."
+
+[[topic.question]]
+id = "aarbecht-7"
+stage = "plans"
+lb = "Wat fir eng Aarbecht géingt Dir gär maachen?"
+en = "What kind of job would you like to do?"
+starter = "Ech géing gär ..."
+
+[[topic.question]]
+id = "aarbecht-8"
+stage = "plans"
+lb = "Wat wëllt Dir fir Är Aarbecht nach léieren?"
+en = "What else do you want to learn for your job?"
+starter = "Ech wëll ... léieren."
+
+[[topic]]
+id = "famill"
+name_lb = "Famill"
+name_en = "Family"
+
+[[topic.question]]
+id = "famill-1"
+stage = "general"
+lb = "Hutt Dir eng grouss Famill?"
+en = "Do you have a big family?"
+starter = "Meng Famill ass ..."
+
+[[topic.question]]
+id = "famill-2"
+stage = "general"
+lb = "Wou wunnt Är Famill?"
+en = "Where does your family live?"
+starter = "Meng Famill wunnt ..."
+
+[[topic.question]]
+id = "famill-3"
+stage = "past"
+lb = "Wou hutt Dir als Kand gewunnt?"
+en = "Where did you live as a child?"
+starter = "Als Kand hunn ech zu ... gewunnt."
+
+[[topic.question]]
+id = "famill-4"
+stage = "past"
+lb = "Wat hutt Dir als Kand mat Ärer Famill gemaach?"
+en = "What did you do with your family as a child?"
+starter = "Mir hunn dacks ..."
+
+[[topic.question]]
+id = "famill-5"
+stage = "present"
+lb = "Wéi dacks gesitt Dir Är Famill?"
+en = "How often do you see your family?"
+starter = "Ech gesi meng Famill ..."
+
+[[topic.question]]
+id = "famill-6"
+stage = "present"
+lb = "Wat maacht Dir gär mat Ärer Famill?"
+en = "What do you like doing with your family?"
+starter = "Mat menger Famill ..."
+
+[[topic.question]]
+id = "famill-7"
+stage = "plans"
+lb = "Wéini gesitt Dir Är Famill erëm?"
+en = "When will you see your family again?"
+starter = "Meng Famill gesinn ech ..."
+
+[[topic.question]]
+id = "famill-8"
+stage = "plans"
+lb = "Wat wëllt Dir am Summer mat Ärer Famill maachen?"
+en = "What do you want to do with your family in the summer?"
+starter = "Am Summer wëlle mir ..."
+
+[[topic]]
+id = "fraizait"
+name_lb = "Fräizäit"
+name_en = "Leisure"
+
+[[topic.question]]
+id = "fraizait-1"
+stage = "general"
+lb = "Wat maacht Dir gär an Ärer Fräizäit?"
+en = "What do you like doing in your free time?"
+starter = "A menger Fräizäit ..."
+
+[[topic.question]]
+id = "fraizait-2"
+stage = "general"
+lb = "Maacht Dir gär Sport?"
+en = "Do you like doing sport?"
+starter = "Ech maache gär ..."
+
+[[topic.question]]
+id = "fraizait-3"
+stage = "past"
+lb = "Wat hutt Dir de Weekend gemaach?"
+en = "What did you do at the weekend?"
+starter = "De Weekend hunn ech ..."
+
+[[topic.question]]
+id = "fraizait-4"
+stage = "past"
+lb = "Wat hutt Dir als Kand gär gespillt?"
+en = "What did you like to play as a child?"
+starter = "Als Kand hunn ech gär ... gespillt."
+
+[[topic.question]]
+id = "fraizait-5"
+stage = "present"
+lb = "Wat maacht Dir owes no der Aarbecht?"
+en = "What do you do in the evening after work?"
+starter = "No der Aarbecht ..."
+
+[[topic.question]]
+id = "fraizait-6"
+stage = "present"
+lb = "Mat wiem verbréngt Dir Är Fräizäit?"
+en = "Who do you spend your free time with?"
+starter = "Meeschtens mat ..."
+
+[[topic.question]]
+id = "fraizait-7"
+stage = "plans"
+lb = "Wat wëllt Dir nächst Woch an Ärer Fräizäit maachen?"
+en = "What do you want to do in your free time next week?"
+starter = "Nächst Woch wëll ech ..."
+
+[[topic.question]]
+id = "fraizait-8"
+stage = "plans"
+lb = "Wat fir en neien Hobby géingt Dir gär probéieren?"
+en = "What new hobby would you like to try?"
+starter = "Ech géing gär ... probéieren."
+
+[[topic]]
+id = "iessen"
+name_lb = "Iessen"
+name_en = "Food"
+
+[[topic.question]]
+id = "iessen-1"
+stage = "general"
+lb = "Wat iesst Dir gär?"
+en = "What do you like to eat?"
+starter = "Ech iesse gär ..."
+
+[[topic.question]]
+id = "iessen-2"
+stage = "general"
+lb = "Kacht Dir gär?"
+en = "Do you like cooking?"
+starter = "Jo, ech kache gär ..."
+
+[[topic.question]]
+id = "iessen-3"
+stage = "past"
+lb = "Wat hutt Dir gëschter giess?"
+en = "What did you eat yesterday?"
+starter = "Gëschter hunn ech ... giess."
+
+[[topic.question]]
+id = "iessen-4"
+stage = "past"
+lb = "Wat hutt Dir als Kand gär giess?"
+en = "What did you like to eat as a child?"
+starter = "Als Kand hunn ech gär ... giess."
+
+[[topic.question]]
+id = "iessen-5"
+stage = "present"
+lb = "Wat iesst Dir moies?"
+en = "What do you eat in the morning?"
+starter = "Moies iessen ech ..."
+
+[[topic.question]]
+id = "iessen-6"
+stage = "present"
+lb = "Wou iesst Dir mëttes?"
+en = "Where do you eat at lunchtime?"
+starter = "Mëttes iessen ech ..."
+
+[[topic.question]]
+id = "iessen-7"
+stage = "plans"
+lb = "Wat iesst Dir haut den Owend?"
+en = "What are you eating tonight?"
+starter = "Haut den Owend iessen ech ..."
+
+[[topic.question]]
+id = "iessen-8"
+stage = "plans"
+lb = "Wat fir en Iessen géingt Dir gär eemol probéieren?"
+en = "What food would you like to try some day?"
+starter = "Ech géing gär eemol ... probéieren."
+
+[[topic]]
+id = "wunnen"
+name_lb = "Wunnen"
+name_en = "Home"
+
+[[topic.question]]
+id = "wunnen-1"
+stage = "general"
+lb = "Wou wunnt Dir?"
+en = "Where do you live?"
+starter = "Ech wunnen zu ..."
+
+[[topic.question]]
+id = "wunnen-2"
+stage = "general"
+lb = "Wunnt Dir an engem Haus oder an engem Appartement?"
+en = "Do you live in a house or in a flat?"
+starter = "Ech wunnen an engem ..."
+
+[[topic.question]]
+id = "wunnen-3"
+stage = "past"
+lb = "Wou hutt Dir fréier gewunnt?"
+en = "Where did you live before?"
+starter = "Fréier hunn ech zu ... gewunnt."
+
+[[topic.question]]
+id = "wunnen-4"
+stage = "past"
+lb = "Wéi war Är éischt Wunneng?"
+en = "What was your first home like?"
+starter = "Meng éischt Wunneng war ..."
+
+[[topic.question]]
+id = "wunnen-5"
+stage = "present"
+lb = "Wéi vill Zëmmer huet Är Wunneng?"
+en = "How many rooms does your home have?"
+starter = "Meng Wunneng huet ... Zëmmer."
+
+[[topic.question]]
+id = "wunnen-6"
+stage = "present"
+lb = "Wat gefält Iech un Ärer Wunneng?"
+en = "What do you like about your home?"
+starter = "Mir gefält ..."
+
+[[topic.question]]
+id = "wunnen-7"
+stage = "plans"
+lb = "Wou géingt Dir gär wunnen?"
+en = "Where would you like to live?"
+starter = "Ech géing gär ... wunnen."
+
+[[topic.question]]
+id = "wunnen-8"
+stage = "plans"
+lb = "Wat wëllt Dir an Ärer Wunneng änneren?"
+en = "What do you want to change in your home?"
+starter = "Ech wëll ... änneren."
+
+[[topic]]
+id = "reesen"
+name_lb = "Reesen"
+name_en = "Travel"
+
+[[topic.question]]
+id = "reesen-1"
+stage = "general"
+lb = "Reest Dir gär?"
+en = "Do you like travelling?"
+starter = "Jo, ech reese gär, well ..."
+
+[[topic.question]]
+id = "reesen-2"
+stage = "general"
+lb = "Fuert Dir léiwer mam Zuch oder mam Auto?"
+en = "Do you prefer going by train or by car?"
+starter = "Ech fuere léiwer mam ..."
+
+[[topic.question]]
+id = "reesen-3"
+stage = "past"
+lb = "Wou waart Dir d'lescht Joer an der Vakanz?"
+en = "Where were you on holiday last year?"
+starter = "D'lescht Joer war ech ..."
+
+[[topic.question]]
+id = "reesen-4"
+stage = "past"
+lb = "Wat war Är schéinst Rees?"
+en = "What was your nicest trip?"
+starter = "Meng schéinst Rees war ..."
+
+[[topic.question]]
+id = "reesen-5"
+stage = "present"
+lb = "Wou maacht Dir gär Vakanz?"
+en = "Where do you like to go on holiday?"
+starter = "Ech maache gär Vakanz ..."
+
+[[topic.question]]
+id = "reesen-6"
+stage = "present"
+lb = "Wat huelt Dir ëmmer mat, wann Dir reest?"
+en = "What do you always take with you when you travel?"
+starter = "Ech huelen ëmmer ... mat."
+
+[[topic.question]]
+id = "reesen-7"
+stage = "plans"
+lb = "Wou wëllt Dir dëst Joer Vakanz maachen?"
+en = "Where do you want to go on holiday this year?"
+starter = "Dëst Joer wëll ech ..."
+
+[[topic.question]]
+id = "reesen-8"
+stage = "plans"
+lb = "Wat fir e Land géingt Dir gär gesinn?"
+en = "Which country would you like to see?"
+starter = "Ech géing gär ... gesinn."
+
+[[topic]]
+id = "gesondheet"
+name_lb = "Gesondheet"
+name_en = "Health"
+
+[[topic.question]]
+id = "gesondheet-1"
+stage = "general"
+lb = "Wéi geet et Iech mat Ärer Gesondheet?"
+en = "How is your health?"
+starter = "Et geet mir ..."
+
+[[topic.question]]
+id = "gesondheet-2"
+stage = "general"
+lb = "Wat maacht Dir, fir gesond ze bleiwen?"
+en = "What do you do to stay healthy?"
+starter = "Fir gesond ze bleiwen, ..."
+
+[[topic.question]]
+id = "gesondheet-3"
+stage = "past"
+lb = "Waart Dir d'lescht Joer beim Dokter?"
+en = "Were you at the doctor's last year?"
+starter = "D'lescht Joer war ech ..."
+
+[[topic.question]]
+id = "gesondheet-4"
+stage = "past"
+lb = "Wéi dacks hutt Dir fréier Sport gemaach?"
+en = "How often did you do sport before?"
+starter = "Fréier hunn ech ... Sport gemaach."
+
+[[topic.question]]
+id = "gesondheet-5"
+stage = "present"
+lb = "Wat iesst Dir haut, fir gesond ze bleiwen?"
+en = "What do you eat these days to stay healthy?"
+starter = "Ech iessen vill ..."
+
+[[topic.question]]
+id = "gesondheet-6"
+stage = "present"
+lb = "Schlooft Dir gutt?"
+en = "Do you sleep well?"
+starter = "Ech schlofe ..."
+
+[[topic.question]]
+id = "gesondheet-7"
+stage = "plans"
+lb = "Wat wëllt Dir fir Är Gesondheet änneren?"
+en = "What do you want to change for your health?"
+starter = "Ech wëll ... änneren."
+
+[[topic.question]]
+id = "gesondheet-8"
+stage = "plans"
+lb = "Géingt Dir gär méi Sport maachen?"
+en = "Would you like to do more sport?"
+starter = "Ech géing gär ..."
+
+[[topic]]
+id = "akafen"
+name_lb = "Akafen"
+name_en = "Shopping"
+
+[[topic.question]]
+id = "akafen-1"
+stage = "general"
+lb = "Wou kaaft Dir Är Liewensmëttel?"
+en = "Where do you buy your groceries?"
+starter = "Ech kafen ... am ..."
+
+[[topic.question]]
+id = "akafen-2"
+stage = "general"
+lb = "Kaaft Dir gär an?"
+en = "Do you like shopping?"
+starter = "Ech kafen ... gär an, well ..."
+
+[[topic.question]]
+id = "akafen-3"
+stage = "past"
+lb = "Wat hutt Dir dës Woch kaaft?"
+en = "What did you buy this week?"
+starter = "Dës Woch hunn ech ... kaaft."
+
+[[topic.question]]
+id = "akafen-4"
+stage = "past"
+lb = "Wou sidd Dir fréier akafe gaangen?"
+en = "Where did you go shopping before?"
+starter = "Fréier sinn ech ... akafe gaangen."
+
+[[topic.question]]
+id = "akafen-5"
+stage = "present"
+lb = "Kaaft Dir léiwer am Geschäft oder um Internet?"
+en = "Do you prefer to shop in a shop or online?"
+starter = "Ech kafe léiwer ..., well ..."
+
+[[topic.question]]
+id = "akafen-6"
+stage = "present"
+lb = "Wat kascht zu Lëtzebuerg vill?"
+en = "What is expensive in Luxembourg?"
+starter = "Zu Lëtzebuerg kascht ... vill."
+
+[[topic.question]]
+id = "akafen-7"
+stage = "plans"
+lb = "Wat wëllt Dir geschwënn kafen?"
+en = "What do you want to buy soon?"
+starter = "Ech wëll geschwënn ... kafen."
+
+[[topic.question]]
+id = "akafen-8"
+stage = "plans"
+lb = "Wéi wëllt Dir Suen spueren, wann Dir akaaft?"
+en = "How do you want to save money when you shop?"
+starter = "Ech wëll ... spueren."
+
+[[topic]]
+id = "gemeng"
+name_lb = "Gemeng a Verwaltung"
+name_en = "Commune and administration"
+
+[[topic.question]]
+id = "gemeng-1"
+stage = "general"
+lb = "An wat fir enger Gemeng wunnt Dir?"
+en = "Which commune do you live in?"
+starter = "Ech wunnen an der Gemeng ..."
+
+[[topic.question]]
+id = "gemeng-2"
+stage = "general"
+lb = "Waart Dir schonn op der Gemeng?"
+en = "Have you been to the commune office?"
+starter = "Jo, ech war op der Gemeng, fir ..."
+
+[[topic.question]]
+id = "gemeng-3"
+stage = "past"
+lb = "Wat hutt Dir d'lescht Kéier op der Gemeng gemaach?"
+en = "What did you do at the commune office last time?"
+starter = "D'lescht Kéier hunn ech ..."
+
+[[topic.question]]
+id = "gemeng-4"
+stage = "past"
+lb = "Wéi war et, wéi Dir Är Adress ugemellt hutt?"
+en = "How was it when you registered your address?"
+starter = "Wéi ech meng Adress ugemellt hunn, ..."
+
+[[topic.question]]
+id = "gemeng-5"
+stage = "present"
+lb = "Wéi fannt Dir d'Formulairen vun der Verwaltung?"
+en = "What do you think of the administration's forms?"
+starter = "Ech fannen d'Formulairen ..."
+
+[[topic.question]]
+id = "gemeng-6"
+stage = "present"
+lb = "Wat gefält Iech un Ärer Gemeng?"
+en = "What do you like about your commune?"
+starter = "Mir gefält ..., well ..."
+
+[[topic.question]]
+id = "gemeng-7"
+stage = "plans"
+lb = "Wat wëllt Dir geschwënn op der Gemeng froen?"
+en = "What do you want to ask at the commune office soon?"
+starter = "Ech wëll ... froen."
+
+[[topic.question]]
+id = "gemeng-8"
+stage = "plans"
+lb = "Wat kéint Är Gemeng besser maachen?"
+en = "What could your commune do better?"
+starter = "Meng Gemeng kéint ..."
+
+[[topic]]
+id = "schoul"
+name_lb = "Schoul a Kanner"
+name_en = "School and children"
+
+[[topic.question]]
+id = "schoul-1"
+stage = "general"
+lb = "Hutt Dir Kanner?"
+en = "Do you have children?"
+starter = "Jo, ech hunn ... Kanner."
+
+[[topic.question]]
+id = "schoul-2"
+stage = "general"
+lb = "Wéi war Är Schoulzäit?"
+en = "How was your time at school?"
+starter = "Meng Schoulzäit war ..."
+
+[[topic.question]]
+id = "schoul-3"
+stage = "past"
+lb = "Wat hutt Dir an der Schoul am léifsten geléiert?"
+en = "What did you like learning most at school?"
+starter = "Am léifsten hunn ech ... geléiert."
+
+[[topic.question]]
+id = "schoul-4"
+stage = "past"
+lb = "Wéi sidd Dir fréier an d'Schoul komm?"
+en = "How did you get to school back then?"
+starter = "Fréier sinn ech ... an d'Schoul komm."
+
+[[topic.question]]
+id = "schoul-5"
+stage = "present"
+lb = "Wéi fannt Dir d'Schoulen zu Lëtzebuerg?"
+en = "What do you think of the schools in Luxembourg?"
+starter = "Ech fannen d'Schoulen ..."
+
+[[topic.question]]
+id = "schoul-6"
+stage = "present"
+lb = "Wat léiert Dir haut nach?"
+en = "What are you still learning these days?"
+starter = "Haut léieren ech ..."
+
+[[topic.question]]
+id = "schoul-7"
+stage = "plans"
+lb = "Wat wëllt Dir Äre Kanner matginn?"
+en = "What do you want to hand down to your children?"
+starter = "Ech wëll menge Kanner ... matginn."
+
+[[topic.question]]
+id = "schoul-8"
+stage = "plans"
+lb = "Wat wëllt Dir selwer nach léieren?"
+en = "What do you still want to learn yourself?"
+starter = "Ech wëll nach ... léieren."
+
+[[topic]]
+id = "wieder"
+name_lb = "Wieder"
+name_en = "Weather"
+
+[[topic.question]]
+id = "wieder-1"
+stage = "general"
+lb = "Wéi ass d'Wieder haut?"
+en = "What is the weather like today?"
+starter = "Haut ass et ..."
+
+[[topic.question]]
+id = "wieder-2"
+stage = "general"
+lb = "Wat fir e Wieder hutt Dir am léifsten?"
+en = "What weather do you like best?"
+starter = "Ech hunn ... am léifsten."
+
+[[topic.question]]
+id = "wieder-3"
+stage = "past"
+lb = "Wéi war d'Wieder am Summer?"
+en = "What was the weather like in the summer?"
+starter = "Am Summer war et ..."
+
+[[topic.question]]
+id = "wieder-4"
+stage = "past"
+lb = "Wéi war d'Wieder an Ärem Heemechtsland?"
+en = "What was the weather like in your home country?"
+starter = "A mengem Heemechtsland war et ..."
+
+[[topic.question]]
+id = "wieder-5"
+stage = "present"
+lb = "Wat maacht Dir, wann et reent?"
+en = "What do you do when it rains?"
+starter = "Wann et reent, ..."
+
+[[topic.question]]
+id = "wieder-6"
+stage = "present"
+lb = "Wéi fannt Dir de Wanter zu Lëtzebuerg?"
+en = "How do you find the winter in Luxembourg?"
+starter = "Ech fannen de Wanter ..."
+
+[[topic.question]]
+id = "wieder-7"
+stage = "plans"
+lb = "Wat maacht Dir de Weekend, wann d'Sonn schéngt?"
+en = "What will you do at the weekend if the sun shines?"
+starter = "Wann d'Sonn schéngt, ..."
+
+[[topic.question]]
+id = "wieder-8"
+stage = "plans"
+lb = "Wou wëllt Dir hin, wann et waarm gëtt?"
+en = "Where do you want to go when it gets warm?"
+starter = "Wann et waarm gëtt, wëll ech ..."
+
+[[topic]]
+id = "letzebuerg"
+name_lb = "Liewen zu Lëtzebuerg"
+name_en = "Life in Luxembourg"
+
+[[topic.question]]
+id = "letzebuerg-1"
+stage = "general"
+lb = "Wéi laang wunnt Dir schonn zu Lëtzebuerg?"
+en = "How long have you lived in Luxembourg?"
+starter = "Ech wunne schonn ... zu Lëtzebuerg."
+
+[[topic.question]]
+id = "letzebuerg-2"
+stage = "general"
+lb = "Wat gefält Iech zu Lëtzebuerg?"
+en = "What do you like about Luxembourg?"
+starter = "Mir gefält ..."
+
+[[topic.question]]
+id = "letzebuerg-3"
+stage = "past"
+lb = "Firwat sidd Dir op Lëtzebuerg komm?"
+en = "Why did you come to Luxembourg?"
+starter = "Ech sinn op Lëtzebuerg komm, well ..."
+
+[[topic.question]]
+id = "letzebuerg-4"
+stage = "past"
+lb = "Wéi war Är éischt Zäit zu Lëtzebuerg?"
+en = "How was your first time in Luxembourg?"
+starter = "Meng éischt Zäit war ..."
+
+[[topic.question]]
+id = "letzebuerg-5"
+stage = "present"
+lb = "Wat ass hei anescht wéi an Ärem Heemechtsland?"
+en = "What is different here from your home country?"
+starter = "Hei ass ... anescht."
+
+[[topic.question]]
+id = "letzebuerg-6"
+stage = "present"
+lb = "Wat fir Sprooche schwätzt Dir am Alldag?"
+en = "Which languages do you speak in everyday life?"
+starter = "Am Alldag schwätzen ech ..."
+
+[[topic.question]]
+id = "letzebuerg-7"
+stage = "plans"
+lb = "Wat wëllt Dir zu Lëtzebuerg nach entdecken?"
+en = "What do you still want to discover in Luxembourg?"
+starter = "Ech wëll nach ... entdecken."
+
+[[topic.question]]
+id = "letzebuerg-8"
+stage = "plans"
+lb = "Wëllt Dir laang zu Lëtzebuerg bleiwen?"
+en = "Do you want to stay in Luxembourg for long?"
+starter = "Ech wëll ... bleiwen, well ..."

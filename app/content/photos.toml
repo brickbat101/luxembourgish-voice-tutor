@@ -1,0 +1,217 @@
+# The photos of practice mode. After the questions of a topic the learner picks one of three
+# and talks about it. The app reads this file when it starts; restart it after an edit.
+#
+# Every photo is from Wikimedia Commons and free of copyright: `licence` is "Public domain"
+# or "CC0", as Commons names it. `file` is the title on Commons, `source_url` its page there.
+# scripts/download_photos.py fetches each as static/photos/<id>.jpg and refuses another licence.
+#
+# `description_en` says what the photo shows: the place, the people, what they do, the things,
+# the weather or the time of day. It is all that the tutor's reaction to an answer knows of
+# the picture, so it must be true to it; it may run over several lines. `question_lb` is the
+# one question that is about this scene, `question_en` its English. tests/test_practice.py
+# checks every Luxembourgish word here against the LOD dictionary. Not reviewed by a native
+# speaker.
+#
+# `topic` is optional: the id of a topic of practice.toml. After that topic the learner is
+# offered the photos tagged with it first; a photo without `topic` is offered after any topic.
+
+[[photo]]
+id = "maart"
+file = "Greengrocer At A Street Market In France Dordogne (242326619).jpeg"
+source_url = "https://commons.wikimedia.org/wiki/File:Greengrocer_At_A_Street_Market_In_France_Dordogne_(242326619).jpeg"
+licence = "CC0"
+author = "Joenomias Menno De Jong"
+description_en = """
+A vegetable stall at an open-air street market on a rainy day; the ground is wet. A man in a
+dark cap, a dark jacket and shorts stands at the stall and bends over the crates with one hand
+in the vegetables; he may be the seller or a customer. The wooden crates hold yellow, green and
+red peppers, tomatoes, carrots, broccoli, green beans, potatoes, courgettes, radishes and leeks,
+with small price signs. Behind the stall are a white van and a grey car with its boot open, and
+further back a shop with a red awning. It is daytime under a grey sky."""
+question_lb = "Wat fir Geméis gesitt Dir um Maart?"
+question_en = "What vegetables do you see at the market?"
+
+[[photo]]
+id = "mettegiessen"
+file = "Family eating meal.jpg"
+source_url = "https://commons.wikimedia.org/wiki/File:Family_eating_meal.jpg"
+licence = "Public domain"
+author = "National Cancer Institute"
+description_en = """
+A family of five sits at a table at home and eats together: an older woman with grey hair, a
+man with a moustache in a checked shirt, a woman in a dark blue top, a girl with long hair and
+a boy. They are smiling and handing dishes to each other. On the white tablecloth are a green
+pot of cooked vegetables, a brown pot of beans, a bowl of rice, a salad, a basket with a cloth
+over it, plates, glasses of water and a glass jug of water. The room has patterned wallpaper
+and a window blind. It is a meal indoors; the picture does not show the time of day."""
+question_lb = "Wat steet um Dësch?"
+question_en = "What is on the table?"
+
+[[photo]]
+id = "busarret"
+file = "Bialystok poland people bus station august 2018.jpg"
+source_url = "https://commons.wikimedia.org/wiki/File:Bialystok_poland_people_bus_station_august_2018.jpg"
+licence = "CC0"
+author = "Rakoon"
+description_en = """
+A bus stop on a city street on a sunny summer day. Under a shelter with a red frame and a blue
+sign with the bus numbers, four people sit on a bench and wait: a girl with red hair, an older
+woman with glasses and a beige handbag, a younger woman in a blue T-shirt and jeans, and an
+older woman in white with a bright green bag. Two blue shopping bags stand on the ground in
+front of them. A green car drives by on the road, and behind the stop are trees, grass and a
+timetable on the shelter wall."""
+question_lb = "Op wat waarden d'Leit?"
+question_en = "What are the people waiting for?"
+
+[[photo]]
+id = "park"
+file = "People having picnic in park (6968378538).jpg"
+source_url = "https://commons.wikimedia.org/wiki/File:People_having_picnic_in_park_(6968378538).jpg"
+licence = "CC0"
+author = "D Coetzee"
+description_en = """
+A wide grassy hill in a park on a clear, sunny day with a pale blue sky. On the left a small
+group has a picnic: three people sit or kneel on the grass beside bags and a water bottle, and
+a man in sunglasses crouches with a small brown and white dog next to a white blanket. On the
+right an older man with a big straw hat, a green checked shirt and beige trousers walks across
+the grass with a folded cloth in his hand, and two people walk away behind him. Kites fly in
+the sky, a few children run near dark green trees, and far away there are hills with houses.
+It is daytime."""
+question_lb = "Wéi ass d'Wieder um Bild?"
+question_en = "What is the weather like in the picture?"
+
+[[photo]]
+id = "gare"
+file = "Passengers boarding train at Bishops Lydeard station 2025-07-27.jpg"
+source_url = "https://commons.wikimedia.org/wiki/File:Passengers_boarding_train_at_Bishops_Lydeard_station_2025-07-27.jpg"
+licence = "CC0"
+author = "Andy Li"
+description_en = """
+A platform at a small country railway station on a summer day with a grey sky. An old-fashioned
+train with dark red and cream-yellow carriages stands on the left with its doors open. A guard
+in a black cap, a white shirt and black trousers holds a carriage door, and people are about to
+get on: an older man with glasses in a turquoise shirt who carries a bag and a red jacket, a
+man in a flowered shirt and shorts who pushes a walking frame on wheels, and a man in a blue
+T-shirt with a pushchair. Behind them are a stone bridge over the track, smoke from the engine,
+tall green trees, an orange lamp post, pink flowers and a bench."""
+question_lb = "Wat fir Faarwen huet den Zuch?"
+question_en = "What colours does the train have?"
+
+[[photo]]
+id = "terrass"
+file = "Grand Rounds Scenic Byway - Late Afternoon Dining at an Outdoor Cafe on St. Anthony's Heritage Trail - NARA - 7718743.jpg"
+source_url = "https://commons.wikimedia.org/wiki/File:Grand_Rounds_Scenic_Byway_-_Late_Afternoon_Dining_at_an_Outdoor_Cafe_on_St._Anthony%27s_Heritage_Trail_-_NARA_-_7718743.jpg"
+licence = "Public domain"
+author = "A. E. Crane, U.S. Department of Transportation"
+description_en = """
+A café terrace on a city street on a sunny day, in the late afternoon. Many people sit on
+white plastic chairs at small tables under big parasols in white, blue, green and red; they
+talk and have drinks, and a server in a dark red shirt stands among the tables. The terrace is
+on a brick pavement in front of old brick buildings, in the shade of tall green trees. The
+street beside it is paved with red bricks and has no cars, and a few people walk in the
+distance."""
+question_lb = "Wat géingt Dir do bestellen?"
+question_en = "What would you order there?"
+
+[[photo]]
+id = "apdikt"
+file = "The 31 MDG pharmacy takes care of everyone (8469053).jpg"
+source_url = "https://commons.wikimedia.org/wiki/File:The_31_MDG_pharmacy_takes_care_of_everyone_(8469053).jpg"
+licence = "Public domain"
+author = "Justin Carnahan, U.S. Air Force"
+topic = "gesondheet"
+description_en = """
+The inside of a pharmacy, behind the counter. A smiling woman with short brown hair, in a
+camouflage uniform with a medical badge on the sleeve, sits at a desk and talks to someone who
+is outside the picture. In front of her are two computer screens, a tray of papers and a pen; a
+pink drinking cup stands on the desk. On the right a white shelf holds many small boxes of
+medicine, and on the left a notice hangs on the wall. It is daytime and the room is lit by lamps."""
+question_lb = "Wat kafen d'Leit an der Apdikt?"
+question_en = "What do people buy at the pharmacy?"
+
+[[photo]]
+id = "supermarche"
+file = "SHOPPING FOR GROCERIES IN A WASHINGTON, DISTRICT OF COLUMBIA SUPERMARKET - NARA - 555651.jpg"
+source_url = "https://commons.wikimedia.org/wiki/File:SHOPPING_FOR_GROCERIES_IN_A_WASHINGTON,_DISTRICT_OF_COLUMBIA_SUPERMARKET_-_NARA_-_555651.jpg"
+licence = "Public domain"
+author = "Erik Calonius, U.S. Environmental Protection Agency"
+topic = "akafen"
+description_en = """
+An aisle in a supermarket in an old colour photograph from the 1970s. A young woman in a blue
+shirt pushes a metal shopping cart with bread and other packages in it. Behind her an older
+woman with glasses and a dark jacket stands at her own cart, and a man in a white shirt is
+further back. On the left the shelves are full of tins, jars and red and orange cartons; on the
+right bottles are stacked in crates, and strip lights hang from the ceiling. It is indoors, and
+the picture does not show the time of day."""
+question_lb = "Wat kafen d'Leit am Supermarché?"
+question_en = "What do people buy in the supermarket?"
+
+[[photo]]
+id = "gemengenhaus"
+file = "Luxembourg City Hall (54540726309).jpg"
+source_url = "https://commons.wikimedia.org/wiki/File:Luxembourg_City_Hall_(54540726309).jpg"
+licence = "CC0"
+author = "Pierre Blaché"
+topic = "gemeng"
+description_en = """
+The front of the town hall of Luxembourg City at dusk, seen from a wide paved square. The
+building has two floors, cream walls, yellow stone corners and a dark roof with two chimneys,
+and its windows and doors are lit from inside. A broad flight of steps leads up to the glass
+doors, with a stone lion on each side and a tall lamp on the left and on the right. Red flowers
+hang under the upper windows, and flags, among them the red, white and light blue flag of
+Luxembourg, hang from the middle windows. The sky is dark blue with clouds, and the square is
+empty."""
+question_lb = "Wat maacht een op der Gemeng?"
+question_en = "What does one do at the town hall?"
+
+[[photo]]
+id = "schoulhaff"
+file = "Taos County, New Mexico. Children play in the Penasco schoolyard. School was built by the Catholic . . . - NARA - 521831.jpg"
+source_url = "https://commons.wikimedia.org/wiki/File:Taos_County,_New_Mexico._Children_play_in_the_Penasco_schoolyard._School_was_built_by_the_Catholic_._._._-_NARA_-_521831.jpg"
+licence = "Public domain"
+author = "Irving Rusinow, U.S. Department of Agriculture"
+topic = "schoul"
+description_en = """
+A black and white photograph, taken in 1941, of a school yard in front of a long, low school
+building with plain walls. About twenty children in dark coats, trousers and dresses play on the
+bare ground; some of them stand in a ring and hold hands. At the back a woman in a long white
+dress and a dark veil, a teacher, stands with a few girls, and one more girl stands on the
+right in front. Behind the building are bushes and low mountains. The sky is clear and the sun
+is low, so the shadows on the ground are long."""
+question_lb = "Wat maachen d'Kanner um Schoulhaff?"
+question_en = "What are the children doing in the school yard?"
+
+[[photo]]
+id = "reen"
+file = "Ettelbruck in the rain with sunshine.jpg"
+source_url = "https://commons.wikimedia.org/wiki/File:Ettelbruck_in_the_rain_with_sunshine.jpg"
+licence = "CC0"
+author = "Alf van Beem"
+topic = "wieder"
+description_en = """
+A paved shopping street in Luxembourg in the rain while the sun shines, seen from under a big
+cream umbrella that fills the top of the picture and has drops of water on it. The
+brick-coloured pavement is wet and shiny, and the sun makes the water glitter. On the left are
+old houses behind a black fence with flowers, a bench and a few bicycles; in the middle stands a
+lamp post with a basket of flowers; on the right are shops with awnings and clothes in the
+windows, a small tree and a grey bin. Far ahead the sky between the houses is blue with white
+clouds. The street is almost empty, and no one is close."""
+question_lb = "Wat maache Dir, wann et reent?"
+question_en = "What do you do when it rains?"
+
+[[photo]]
+id = "stad"
+file = "Place d'Armes Luxbg2.JPG"
+source_url = "https://commons.wikimedia.org/wiki/File:Place_d%27Armes_Luxbg2.JPG"
+licence = "CC0"
+author = "Ipigott"
+topic = "letzebuerg"
+description_en = """
+A summer flea market on a big square in Luxembourg City, on a sunny day with a blue sky and a
+few clouds. Many people walk between the stalls: two young men in T-shirts and sunglasses cross
+the square in front, a man in a patterned shirt stands at the left edge, and women with
+handbags look at the goods. The stalls have tables with pottery and small things to sell under
+white and red parasols and a blue tent. Behind them are green trees, old buildings and a
+bandstand with a green roof."""
+question_lb = "Wat verkafen d'Leit um Maart an der Stad?"
+question_en = "What do people sell at the market in the city?"

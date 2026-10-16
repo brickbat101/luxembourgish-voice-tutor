@@ -1,0 +1,921 @@
+:root {
+  --ink: #1c1c1c;
+  --muted: #5f6368;
+  --line: #d0d4d9;
+  --edge: #767676;
+  --page: #ffffff;
+  --soft: #f3f4f6;
+  --accent: #0b5cad;
+  --lb: #e6f0fb;
+  --speaking: #ffe58a;
+  --warn: #fff4d6;
+  --warn-line: #d9a514;
+  --error: #a31515;
+  --ok: #1b6e36;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+body {
+  margin: 0;
+  font: 16px/1.5 system-ui, "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: var(--page);
+}
+
+header,
+.banner,
+.layout {
+  max-width: 62rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 0.8rem;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+header .notice {
+  flex: 0 0 100%;
+}
+
+h1 {
+  margin: 0.8rem 0;
+  font-size: 1.3rem;
+}
+
+select {
+  padding: 0.2rem 0.4rem;
+  font: inherit;
+  color: inherit;
+  background: var(--page);
+  border: 1px solid var(--edge);
+  border-radius: 6px;
+}
+
+.notice {
+  margin: 0 0 0.6rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+h2 {
+  margin: 0.8rem 0 0.3rem;
+  font-size: 1rem;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.banner {
+  padding: 0.6rem 1rem;
+  background: var(--warn);
+  border: 1px solid var(--warn-line);
+  border-radius: 6px;
+  overflow-wrap: anywhere;
+}
+
+.banner p {
+  margin: 0.15rem 0;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 16rem;
+  grid-template-areas:
+    "log side"
+    "dock side";
+  gap: 0 1.5rem;
+  align-items: start;
+}
+
+.log {
+  grid-area: log;
+  min-height: 4rem;
+}
+
+.side {
+  grid-area: side;
+  padding: 0 0.9rem 0.8rem;
+  background: var(--soft);
+  border-radius: 6px;
+  overflow-wrap: anywhere;
+}
+
+.side ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+/* The Data block: what is kept on this PC, its export and the control that deletes it all. */
+.data {
+  margin-top: 0.8rem;
+  font-size: 0.9rem;
+}
+
+.data summary {
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.data p {
+  margin: 0.3rem 0;
+}
+
+/* The delete button, or its question with Yes and No, sit in the row beside Export. */
+#data-controls {
+  display: contents;
+}
+
+.side .note {
+  margin: 0.2rem 0;
+  font-size: 0.8rem;
+}
+
+.side .controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+  margin: 0.4rem 0 0;
+  font-size: 0.9rem;
+}
+
+.side .controls button {
+  padding: 0.25rem 0.7rem;
+  background: var(--page);
+}
+
+.dock {
+  grid-area: dock;
+  position: sticky;
+  bottom: 0;
+  padding: 0.6rem 0 0.8rem;
+  background: var(--page);
+  border-top: 1px solid var(--line);
+}
+
+/* --- conversation --- */
+
+.turn {
+  margin: 0 0 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--line);
+  overflow-wrap: anywhere;
+}
+
+.turn p {
+  margin: 0.3rem 0;
+}
+
+.who {
+  margin-right: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.user {
+  white-space: pre-wrap;
+}
+
+.segment {
+  padding: 0.1rem 0.2rem;
+  border-radius: 4px;
+}
+
+.segment.lb {
+  font-weight: 700;
+  background: var(--lb);
+}
+
+/* Luxembourgish inside a mixed chat reply: marked by its style, without the LB tag. */
+.segment.switched {
+  font-weight: 600;
+  color: var(--accent);
+  border-bottom: 2px solid currentColor;
+}
+
+.segment.glossed {
+  text-decoration: underline dotted;
+  text-underline-offset: 0.2em;
+}
+
+.segment.playable {
+  cursor: pointer;
+}
+
+.segment.playable:hover,
+.segment.playable:focus-visible {
+  outline: 1px solid var(--accent);
+}
+
+.segment.speaking {
+  background: var(--speaking);
+  outline: 2px solid var(--ink);
+}
+
+.tag {
+  display: inline-block;
+  margin-right: 0.35rem;
+  padding: 0 0.3rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--accent);
+  border: 1px solid currentColor;
+  border-radius: 3px;
+  vertical-align: 0.1em;
+}
+
+.claims {
+  margin: 0.4rem 0 0;
+  padding-left: 1.1rem;
+  font-size: 0.9rem;
+}
+
+.claims .tag {
+  margin: 0 0 0 0.4rem;
+}
+
+.tag.verified {
+  color: var(--ok);
+}
+
+.tag.unverified {
+  color: var(--error);
+}
+
+/* The label of a practice correction: a badge with its words, then the category. */
+.label-line {
+  margin: 0.4rem 0 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.label {
+  display: inline-block;
+  margin-right: 0.2rem;
+  padding: 0 0.35rem;
+  font-weight: 700;
+  border: 1px solid currentColor;
+  border-radius: 3px;
+}
+
+.label-verified {
+  color: var(--ok);
+}
+
+.label-likely {
+  color: var(--accent);
+}
+
+.label-unverified {
+  color: var(--muted);
+  border-style: dashed;
+}
+
+/* What an unverified correction says: still spoken, shown grey. */
+.doubtful,
+.doubtful .tag {
+  color: var(--muted);
+}
+
+.segment.lb.doubtful,
+.also .segment.lb {
+  font-weight: 400;
+  background: var(--soft);
+}
+
+.also {
+  margin: 0.4rem 0 0;
+  font-size: 0.9rem;
+}
+
+/* The one tap on a correction the learner thinks is wrong, and the words that replace it. */
+.dispute-line {
+  margin: 0.4rem 0 0;
+  font-size: 0.85rem;
+}
+
+.dispute {
+  padding: 0.2rem 0.6rem;
+}
+
+.warning {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* The look back on a practice talk. */
+.lookback h3 {
+  margin: 0.8rem 0 0.1rem;
+  font-size: 0.95rem;
+}
+
+.lookback h3:first-child {
+  margin-top: 0;
+}
+
+.takehome {
+  margin: 0.5rem 0 0.7rem;
+}
+
+.takehome .muted {
+  font-size: 0.85rem;
+}
+
+.lookback .aside {
+  margin-top: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* --- controls --- */
+
+.statusrow {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  min-height: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.status {
+  flex: 1;
+  font-size: 0.95rem;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+.status.error {
+  color: var(--error);
+  font-weight: 600;
+}
+
+.status .fix {
+  font-weight: 400;
+}
+
+button,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  padding: 0.45rem 1rem;
+  background: var(--soft);
+  border: 1px solid var(--edge);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+#send,
+#play {
+  color: #fff;
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+#teacher[aria-pressed="true"],
+#practice[aria-pressed="true"],
+#review[aria-pressed="true"],
+#listening[aria-pressed="true"] {
+  color: #fff;
+  background: var(--ok);
+  border-color: var(--ok);
+}
+
+/* A pressed button shows a tick as well as its colour. */
+.row [aria-pressed="true"]::before {
+  content: "\2713 ";
+}
+
+/* --- practice --- */
+
+/* The panel scrolls in itself before it pushes the controls under it out of a low window. */
+.practice {
+  max-height: max(10rem, calc(100vh - 21rem));
+  margin-bottom: 0.6rem;
+  overflow-y: auto;
+}
+
+.practice p {
+  margin: 0.2rem 0;
+}
+
+/* Relaxed or realistic, above the topics. */
+.setting {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1rem;
+  margin: 0.4rem 0 0;
+  padding: 0.2rem 0.6rem 0.4rem;
+  border: 1px solid var(--edge);
+  border-radius: 6px;
+}
+
+.setting legend {
+  padding: 0 0.3rem;
+  font-size: 0.85rem;
+}
+
+.setting label {
+  display: flex;
+  gap: 0.35rem;
+  align-items: center;
+}
+
+.card .clock {
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.4rem;
+}
+
+.topics button {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.3;
+  text-align: left;
+}
+
+.topics .muted {
+  font-size: 0.85rem;
+}
+
+/* The three photos to pick from. */
+.photos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.4rem;
+}
+
+.photos button {
+  display: flex;
+  flex: 1 1 8rem;
+  flex-direction: column;
+  gap: 0.3rem;
+  max-width: 13rem;
+  padding: 0.3rem;
+  line-height: 1.3;
+  text-align: left;
+}
+
+.photos img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.photos .muted,
+.photo figcaption {
+  font-size: 0.75rem;
+  overflow-wrap: anywhere;
+}
+
+/* The picked photo, beside the question about it. */
+.beside {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  align-items: flex-start;
+}
+
+.photo {
+  flex: 0 1 auto;
+  max-width: 19rem;
+  margin: 0;
+}
+
+/* In a low window the photo is smaller, so that the question stays in sight. */
+.photo img {
+  display: block;
+  max-width: 100%;
+  max-height: min(14rem, 30vh);
+  border-radius: 6px;
+}
+
+.card {
+  flex: 1 1 14rem;
+  padding: 0.6rem 0.8rem;
+  background: var(--lb);
+  border-radius: 6px;
+  overflow-wrap: anywhere;
+}
+
+.card .where {
+  font-size: 0.8rem;
+}
+
+.card .question {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.card button {
+  margin-top: 0.3rem;
+  padding: 0.25rem 0.7rem;
+  font-size: 0.9rem;
+  background: var(--page);
+}
+
+.footnote {
+  flex: 1;
+  font-size: 0.8rem;
+}
+
+/* --- review --- */
+
+.review {
+  max-height: max(10rem, calc(100vh - 21rem));
+  margin-bottom: 0.6rem;
+  overflow-y: auto;
+}
+
+.review p {
+  margin: 0.2rem 0;
+}
+
+/* The expected form beside what the learner said; stacked in a narrow window. */
+.review .result {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin-top: 0.4rem;
+}
+
+.review .result .muted {
+  font-size: 0.8rem;
+}
+
+.review .expected {
+  font-weight: 700;
+}
+
+.review .good {
+  color: var(--ok);
+  font-weight: 700;
+}
+
+/* The four ratings look alike: none of them is framed as a loss. */
+.ratings {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+@media (max-width: 520px) {
+  .review .result {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* --- listening --- */
+
+.listening {
+  max-height: max(10rem, calc(100vh - 21rem));
+  margin-bottom: 0.6rem;
+  overflow-y: auto;
+}
+
+.listening p {
+  margin: 0.2rem 0;
+}
+
+/* Nothing is said or typed in listening: the talk button and the text box give way. */
+.dock.listening-on .talk,
+.dock.listening-on .hint,
+.dock.listening-on textarea,
+.dock.listening-on #send {
+  display: none;
+}
+
+.listening-question {
+  margin: 0.6rem 0 0;
+  padding: 0.4rem 0.6rem;
+  background: var(--page);
+  border: 1px solid var(--edge);
+  border-radius: 6px;
+}
+
+.listening-question legend {
+  padding: 0 0.3rem;
+  font-weight: 700;
+}
+
+.listening-question .option {
+  display: flex;
+  gap: 0.4rem;
+  align-items: baseline;
+  margin: 0.2rem 0;
+  cursor: pointer;
+}
+
+/* Words say whether an answer was right; no colour does it alone. */
+.listening-question .verdict {
+  font-weight: 700;
+}
+
+.listening .result {
+  margin-top: 0.6rem;
+  font-weight: 700;
+}
+
+.listening .transcript {
+  margin: 0.4rem 0 0;
+  padding-left: 1.4rem;
+}
+
+.listening .transcript li {
+  margin: 0.2rem 0;
+  border-radius: 3px;
+}
+
+.listening .transcript li.playable {
+  cursor: pointer;
+}
+
+.listening .transcript li.speaking {
+  background: var(--speaking);
+}
+
+/* --- progress --- */
+
+.progress {
+  margin-top: 0.8rem;
+  font-size: 0.9rem;
+}
+
+.progress summary {
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.progress dl {
+  margin: 0.4rem 0;
+}
+
+.progress dt {
+  font-weight: 700;
+}
+
+.progress dd {
+  margin: 0 0 0.3rem;
+}
+
+.progress table {
+  width: 100%;
+  margin: 0.4rem 0;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.progress caption,
+.progress .heading {
+  margin: 0.4rem 0 0;
+  font-weight: 700;
+  text-align: left;
+}
+
+.progress th,
+.progress td {
+  padding: 0.1rem 0.3rem;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
+
+.progress td.count {
+  text-align: right;
+}
+
+.progress ul {
+  margin: 0.3rem 0;
+  padding-left: 1.1rem;
+}
+
+.talk {
+  display: block;
+  width: 100%;
+  min-height: 4.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.talk.recording {
+  color: #fff;
+  background: var(--error);
+  border-color: var(--error);
+}
+
+.hint {
+  margin: 0.3rem 0 0.5rem;
+  font-size: 0.85rem;
+}
+
+textarea {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--edge);
+  border-radius: 6px;
+  resize: vertical;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.check,
+.mix {
+  font-size: 0.9rem;
+}
+
+.mix {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+.mix input {
+  width: 6rem;
+  margin: 0;
+}
+
+.mix output {
+  color: var(--muted);
+}
+
+/* --- pronunciation flags --- */
+
+/* The button under a tutor line that opens the row of its words; the arrow shows whether it is open. */
+.flag,
+.flag-words button {
+  padding: 0.1rem 0.6rem;
+  font-size: 0.85rem;
+  background: var(--page);
+}
+
+.flag::after {
+  content: " \25BE";
+}
+
+.flag[aria-expanded="true"]::after {
+  content: " \25B4";
+}
+
+.flag-words {
+  margin-top: 0.3rem;
+  gap: 0.3rem;
+}
+
+.pronunciation {
+  margin-top: 0.8rem;
+  font-size: 0.9rem;
+}
+
+.pronunciation summary {
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.pronunciation ul {
+  margin: 0.4rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pronunciation li {
+  margin: 0.5rem 0;
+  padding: 0.3rem 0.6rem 0.5rem;
+  border: 1px solid var(--edge);
+  border-radius: 6px;
+}
+
+.pronunciation li p {
+  margin: 0.25rem 0;
+}
+
+.pronunciation .line {
+  font-style: italic;
+}
+
+.pronunciation .phonemes {
+  font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+
+.pronunciation label {
+  display: block;
+  margin-top: 0.3rem;
+}
+
+.pronunciation input[type="text"] {
+  display: block;
+  width: 100%;
+  margin-top: 0.2rem;
+  padding: 0.3rem 0.4rem;
+  font: inherit;
+  color: inherit;
+  background: var(--page);
+  border: 1px solid var(--edge);
+  border-radius: 6px;
+}
+
+.pronunciation li button {
+  padding: 0.25rem 0.7rem;
+  background: var(--page);
+}
+
+/* --- voice panel --- */
+
+.voice {
+  margin-top: 0.8rem;
+  font-size: 0.9rem;
+}
+
+.voice summary {
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.voice fieldset {
+  margin: 0.5rem 0;
+  padding: 0.3rem 0.6rem 0.6rem;
+  border: 1px solid var(--edge);
+  border-radius: 6px;
+}
+
+.voice label {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.3rem;
+}
+
+.voice output {
+  color: var(--muted);
+}
+
+.voice input[type="range"] {
+  display: block;
+  width: 100%;
+  margin: 0;
+}
+
+.voice button {
+  margin-top: 0.5rem;
+  padding: 0.25rem 0.7rem;
+  background: var(--page);
+}
+
+@media (max-width: 720px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "log"
+      "side"
+      "dock";
+  }
+
+  .side {
+    margin-bottom: 0.8rem;
+  }
+}

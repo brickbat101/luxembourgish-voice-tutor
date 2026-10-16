@@ -1,0 +1,1587 @@
+{
+  "review": "unreviewed",
+  "prompts": [
+    {
+      "id": "chat-01",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "Hi! I just got back from work and I'm pretty tired."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-02",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "Moien!"
+          },
+          {
+            "role": "tutor",
+            "text": "Moien! Hello, nice to hear from you. How is your day going?"
+          },
+          {
+            "role": "user",
+            "text": "Pretty good, I went to the market this morning."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-03",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "I had a really long meeting today."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-04",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "Ich bin heute sehr müde, ech hunn viel gearbeitet."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": [
+        "german_negative"
+      ]
+    },
+    {
+      "id": "teacher-01",
+      "role": "teacher_explain",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "How do I say good morning in Luxembourgish?"
+          }
+        ],
+        "mode": "teacher",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-05",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "My daughter started school this week."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-06",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "It's raining again here in Luxembourg."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "teacher-02",
+      "role": "teacher_explain",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "What is dog in Luxembourgish?"
+          }
+        ],
+        "mode": "teacher",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "judge-01",
+      "role": "judge",
+      "args": {
+        "question_lb": "Wat schafft Dir?",
+        "question_en": "What do you do for work?",
+        "answer": "Ech schaffen als Ingenieur.",
+        "grounding": "",
+        "extra": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-07",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "I cooked pasta for dinner tonight."
+          },
+          {
+            "role": "tutor",
+            "text": "Gutt! Good, that sounds tasty. What sauce did you make?"
+          },
+          {
+            "role": "user",
+            "text": "Just tomatoes and garlic, nothing fancy."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-08",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "Ech sinn midd."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-09",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "I took the bus to Kirchberg today."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-10",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "We are going to the Moselle this weekend."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-11",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "Guten Morgen! Ich gehe heute ins Kino."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": [
+        "german_negative"
+      ]
+    },
+    {
+      "id": "teacher-03",
+      "role": "teacher_explain",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "How do I ask for the bill in a restaurant?"
+          }
+        ],
+        "mode": "teacher",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-12",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "I tried to order a coffee in Luxembourgish today!"
+          },
+          {
+            "role": "tutor",
+            "text": "Super! Great, well done. How did it go?"
+          },
+          {
+            "role": "user",
+            "text": "The waiter answered in French, but I tried."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-13",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "My neighbour said Moien to me this morning and I answered!"
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "teacher-04",
+      "role": "teacher_explain",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "Can you explain how to conjugate goen?"
+          }
+        ],
+        "mode": "teacher",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "wrapup-01",
+      "role": "wrapup",
+      "args": {
+        "facts": "Topic: Work (Aarbecht)\nQuestions the learner answered: 3\nQuestions the learner let go: 0\nQuestions the learner had in English: none\nThe learner described a photo: no\n\nThe chat, in order:\nQuestion 1: Wat schafft Dir? (What do you do for work?)\n- The learner said: Ech schaffen als Ingenieur.\n  Nothing to put right.\nQuestion 2: Wou schafft Dir? (Where do you work?)\n- The learner said: Ech schaffen zu Kierchbierg.\n  Nothing to put right.\nQuestion 3: Wéi kommt Dir op d'Aarbecht? (How do you get to work?)\n- The learner said: Ech fueren mam Bus.\n  You put one thing right: \"fueren\" became \"fuere\" Reason: the n drops before a consonant."
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-14",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "I'm learning Luxembourgish because my partner's family speaks it."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-15",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "I went jogging along the Alzette."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-16",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "Today was my day off."
+          },
+          {
+            "role": "tutor",
+            "text": "Wéi flott! How nice. What did you do with it?"
+          },
+          {
+            "role": "user",
+            "text": "I slept late and then met a friend for lunch."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-17",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "Ech heeschen Anna. Wéi geet et?"
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-18",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "Ech bin gestern nach Trier gefahren."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": [
+        "german_negative"
+      ]
+    },
+    {
+      "id": "teacher-05",
+      "role": "teacher_explain",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "How would I describe my day in Luxembourgish?"
+          }
+        ],
+        "mode": "teacher",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-19",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "I have a cold, so I stayed home."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-20",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "The train was late again this morning."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "teacher-06",
+      "role": "teacher_explain",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "What's the difference between du and Dir?"
+          }
+        ],
+        "mode": "teacher",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "judge-02",
+      "role": "judge",
+      "args": {
+        "question_lb": "Wou schafft Dir?",
+        "question_en": "Where do you work?",
+        "answer": "Ich arbeite bei einer Bank in Luxemburg.",
+        "grounding": "",
+        "extra": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-21",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "I visited the castle in Vianden with friends."
+          },
+          {
+            "role": "tutor",
+            "text": "Wéi schéin! How lovely. Was it busy?"
+          },
+          {
+            "role": "user",
+            "text": "Not really, we had the view almost to ourselves."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-22",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "My dog was very happy to see me tonight."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-23",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "I bought new shoes in the city centre."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-24",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "I'm nervous about my job interview tomorrow."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-25",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "Wir haben heute Abend Besuch, mir kochen zusammen."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": [
+        "german_negative"
+      ]
+    },
+    {
+      "id": "teacher-07",
+      "role": "teacher_explain",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "How do I say I am tired?"
+          }
+        ],
+        "mode": "teacher",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-26",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "We had a barbecue in the garden."
+          },
+          {
+            "role": "tutor",
+            "text": "Gutt! Good weather for it. Who came?"
+          },
+          {
+            "role": "user",
+            "text": "My brother and his kids, they stayed until late."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-27",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "Ech wunnen zu Esch."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "teacher-08",
+      "role": "teacher_explain",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "How do I introduce myself?"
+          }
+        ],
+        "mode": "teacher",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "wrapup-02",
+      "role": "wrapup",
+      "args": {
+        "facts": "Topic: Family (Famill)\nQuestions the learner answered: 2\nQuestions the learner let go: 1\nQuestions the learner had in English: 2\nThe learner described a photo: no\n\nThe chat, in order:\nQuestion 1: Hutt Dir eng grouss Famill? (Do you have a big family?)\n- The learner said: Jo, ech hunn zwou Schwësteren.\n  Nothing to put right.\nQuestion 2: Wou wunnt Är Famill? (Where does your family live?)\n- The learner said: My family lives in Ireland.\n  That was English. In Luxembourgish: \"Meng Famill wunnt an Irland.\""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-28",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "I watched a football match on TV."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-29",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "My son lost a tooth today."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-30",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "I read a book in the park for an hour."
+          },
+          {
+            "role": "tutor",
+            "text": "Wéi flott! How nice. What are you reading?"
+          },
+          {
+            "role": "user",
+            "text": "A crime novel, it's set in Luxembourg actually."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-31",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "It's my birthday today!"
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-32",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "Ech habe keine Zeit heute, ich muss arbeiten."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": [
+        "german_negative"
+      ]
+    },
+    {
+      "id": "teacher-09",
+      "role": "teacher_explain",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "What does Wéi geet et mean?"
+          }
+        ],
+        "mode": "teacher",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-33",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "I had lunch with a colleague from France."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-34",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "Gudde Moien! Ech hunn haut vill geschafft."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "teacher-10",
+      "role": "teacher_explain",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "How do I count from one to five?"
+          }
+        ],
+        "mode": "teacher",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "judge-03",
+      "role": "judge",
+      "args": {
+        "question_lb": "Wéi kommt Dir op d'Aarbecht?",
+        "question_en": "How do you get to work?",
+        "answer": "I take the train every day.",
+        "grounding": "",
+        "extra": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-35",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "The supermarket was really busy after work."
+          },
+          {
+            "role": "tutor",
+            "text": "Oh jee! Oh dear. Did you find everything?"
+          },
+          {
+            "role": "user",
+            "text": "Almost, they had no bread left."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-36",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "I fixed my bike this afternoon."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-37",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "My parents are visiting next week."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-38",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "I don't know what to cook tonight."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-39",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "Das Wetter ist heute schön, mir gehen spazieren."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": [
+        "german_negative"
+      ]
+    },
+    {
+      "id": "teacher-11",
+      "role": "teacher_explain",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "How do I say thank you and you're welcome?"
+          }
+        ],
+        "mode": "teacher",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-40",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "We went for a walk in the forest near Mersch."
+          },
+          {
+            "role": "tutor",
+            "text": "Wéi schéin! How lovely. Was it muddy?"
+          },
+          {
+            "role": "user",
+            "text": "Very muddy, my boots are still drying."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-41",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "I just finished a big project at work."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "teacher-12",
+      "role": "teacher_explain",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "Why is it de Mann but d'Fra?"
+          }
+        ],
+        "mode": "teacher",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "wrapup-03",
+      "role": "wrapup",
+      "args": {
+        "facts": "Topic: Work (Aarbecht)\nQuestions the learner answered: 1\nQuestions the learner let go: 2\nQuestions the learner had in English: 1\nThe learner described a photo: no\n\nThe chat, in order:\nQuestion 1: Wat schafft Dir? (What do you do for work?)\n- The learner said: Ich bin Lehrer.\n  You put one thing right: \"Ich bin Lehrer\" became \"Ech sinn Enseignant\" Reason: ech and sinn are the Luxembourgish words."
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-42",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "Merci! I'm doing fine, and you?"
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-43",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "I painted the kitchen this weekend."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-44",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "I'm sorry, I forgot the word for tired."
+          },
+          {
+            "role": "tutor",
+            "text": "Keng Suerg! No worry. The word is midd. How tired are you today?"
+          },
+          {
+            "role": "user",
+            "text": "Quite tired, ech sinn midd."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-45",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "It was sunny, so we ate outside."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-46",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "Ech wohne seit zwei Jahren in Luxemburg."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": [
+        "german_negative"
+      ]
+    },
+    {
+      "id": "teacher-13",
+      "role": "teacher_explain",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "How do I conjugate sinn in the present tense?"
+          }
+        ],
+        "mode": "teacher",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-47",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "Ech drénken e Kaffi."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-48",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "I have to work on Saturday, which is annoying."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "teacher-14",
+      "role": "teacher_explain",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "How do I say I live in Luxembourg?"
+          }
+        ],
+        "mode": "teacher",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "judge-04",
+      "role": "judge",
+      "args": {
+        "question_lb": "Hutt Dir eng grouss Famill?",
+        "question_en": "Do you have a big family?",
+        "answer": "Jo, ech hunn dräi Bridder an eng Schwëster.",
+        "grounding": "",
+        "extra": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-49",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "My friend from London came to visit."
+          },
+          {
+            "role": "tutor",
+            "text": "Wéi flott! How nice. What did you show her?"
+          },
+          {
+            "role": "user",
+            "text": "We walked through the old town and the Grund."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-50",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "I went to the doctor this morning, nothing serious."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-51",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "I started a new job in Luxembourg City."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-52",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "We played board games with the kids."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-53",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "Meine Tochter ist krank, sie bleibt zu Hause."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": [
+        "german_negative"
+      ]
+    },
+    {
+      "id": "teacher-15",
+      "role": "teacher_explain",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "What is the plural of Kand?"
+          }
+        ],
+        "mode": "teacher",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-54",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "Haut ass d'Wieder schéin."
+          },
+          {
+            "role": "tutor",
+            "text": "Jo, wierklech! Yes, really. Are you going outside?"
+          },
+          {
+            "role": "user",
+            "text": "Yes, I want to sit on the terrace after work."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-55",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "I missed the bus and had to walk."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "teacher-16",
+      "role": "teacher_explain",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "How do I ask someone where they work?"
+          }
+        ],
+        "mode": "teacher",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "wrapup-04",
+      "role": "wrapup",
+      "args": {
+        "facts": "Topic: Family (Famill)\nQuestions the learner answered: 4\nQuestions the learner let go: 0\nQuestions the learner had in English: none\nThe learner described a photo: yes\n\nThe chat, in order:\nQuestion 1: Hutt Dir eng grouss Famill? (Do you have a big family?)\n- The learner said: Neen, eng kleng Famill.\n  Nothing to put right.\nQuestion 2: Wéi dacks gesitt Dir Är Famill? (How often do you see your family?)\n- The learner said: All Weekend.\n  Nothing to put right.\nQuestion 3: Wat maacht Dir gär mat Ärer Famill? (What do you like doing with your family?)\n- The learner said: Mir iessen zesummen.\n  Nothing to put right.\nQuestion 4: Wat gesitt Dir um Bild? (What do you see in the picture?)\n- The learner said: Ech gesinn e Mann an e Kand.\n  Nothing to put right."
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-56",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "I'm thinking about getting a cat."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-57",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "I went swimming at the pool in Kirchberg."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-58",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "My husband made soup for everyone."
+          },
+          {
+            "role": "tutor",
+            "text": "Wéi gutt! How good. What kind of soup?"
+          },
+          {
+            "role": "user",
+            "text": "Bouneschlupp, his grandmother's recipe."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-59",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "I spent the whole day cleaning the flat."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-60",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "Ech trinke gern Kaffee am Morgen."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": [
+        "german_negative"
+      ]
+    },
+    {
+      "id": "teacher-17",
+      "role": "teacher_explain",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "How do I say see you tomorrow?"
+          }
+        ],
+        "mode": "teacher",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-61",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "Ech hunn zwee Kanner."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-62",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "I heard Luxembourgish on the radio and understood one word!"
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "teacher-18",
+      "role": "teacher_explain",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "What's the past tense of ech iessen?"
+          }
+        ],
+        "mode": "teacher",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "judge-05",
+      "role": "judge",
+      "args": {
+        "question_lb": "Wou wunnt Är Famill?",
+        "question_en": "Where does your family live?",
+        "answer": "Meng Famill wunnt zu Dikrech.",
+        "grounding": "",
+        "extra": "The learner had the question in English first."
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-63",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "The shops close early on Saturday here, right?"
+          },
+          {
+            "role": "tutor",
+            "text": "Jo, dacks. Yes, often. Did you get caught out?"
+          },
+          {
+            "role": "user",
+            "text": "Yes, I arrived at six and everything was closed."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-64",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "I went to a concert at the Philharmonie."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-65",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "I'm going on holiday to Portugal next month."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-66",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "Mir ginn haut an de Bësch."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-67",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "Heute habe ech mit meinem Chef gesprochen."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": [
+        "german_negative"
+      ]
+    },
+    {
+      "id": "teacher-19",
+      "role": "teacher_explain",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "How do I order a coffee in Luxembourgish?"
+          }
+        ],
+        "mode": "teacher",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-68",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "My phone broke today."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-69",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "I had a quiet evening at home."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "teacher-20",
+      "role": "teacher_explain",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "What is the n-rule, like en Apel but e Bréif?"
+          }
+        ],
+        "mode": "teacher",
+        "grounding": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "wrapup-05",
+      "role": "wrapup",
+      "args": {
+        "facts": "Topic: Work (Aarbecht)\nQuestions the learner answered: 0\nQuestions the learner let go: 1\nQuestions the learner had in English: none\nThe learner described a photo: no\n\nThe chat, in order:"
+      },
+      "tags": []
+    },
+    {
+      "id": "chat-70",
+      "role": "tutor_chat",
+      "args": {
+        "history": [
+          {
+            "role": "user",
+            "text": "I practised my Luxembourgish with the baker."
+          }
+        ],
+        "mode": "chat",
+        "grounding": ""
+      },
+      "tags": []
+    }
+  ]
+}

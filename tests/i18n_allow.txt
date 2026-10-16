@@ -1,0 +1,16 @@
+# Literals of static/app.js that contain a letter and a space and are not shown to the learner:
+# class lists, selectors and directives. tests/test_i18n.py fails on any other such literal that is
+# not the first argument of t( or tp(.
+#
+# A line here is the literal as written, without its quotes (trailing spaces do not count).
+# Do not add a string the page shows: give it a key in static/i18n/en.json and fr.json and call
+# t("key") with it. A shown string on this list is not translated.
+use strict
+segment playable
+tag verified
+tag unverified
+label label-
+muted also
+segment lb
+turn lookback
+button, input, select, textarea, a[href], summary, [role="button"], [contenteditable]

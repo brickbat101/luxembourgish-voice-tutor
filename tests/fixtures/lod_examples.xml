@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Twelve examples in the shape of new_lod-art.xml (LOD linguistic data, CC0), written by hand
+     for tests/test_lb_judge.py: two with a register label, one with a digit, one of 12 words,
+     the rest 3-10 words; statements, exclamations and a question; a pronoun + present form,
+     sinn + the participle of a sinn verb, hunn + the participle of a hunn verb,
+     adjective + noun and article + noun. -->
+<lod>
+	<entry id="WUNNEN1">
+		<lemma nRuleForm="wunne">wunnen</lemma>
+		<microStructure>
+			<partOfSpeech>VRB</partOfSpeech>
+			<grammaticalUnit>
+				<meaning id="WUNNEN1UNI1">
+					<examples count="4">
+						<example id="ex01">
+							<text>
+								<attribute>EGS</attribute>
+								<word>ech</word>
+								<word>kucken</word>
+								<word>de</word>
+								<word>Mann</word>
+							</text>
+						</example>
+						<example id="ex02">
+							<text>
+								<attribute>FAM</attribute>
+								<word>mir</word>
+								<inflectedHeadword>wunnen</inflectedHeadword>
+								<word>zu</word>
+								<word>Esch</word>
+							</text>
+						</example>
+						<example id="ex03">
+							<text>
+								<word>ech</word>
+								<word>hunn</word>
+								<word>3</word>
+								<word>Kanner</word>
+							</text>
+						</example>
+						<example id="ex04">
+							<text>
+								<word>ech</word>
+								<inflectedHeadword>wunnen</inflectedHeadword>
+								<word>zu</word>
+								<word>Esch</word>
+								<word>an</word>
+								<word>ech</word>
+								<word>kucken</word>
+								<word>all</word>
+								<word>Dag</word>
+								<word>de</word>
+								<word>Mann</word>
+								<word>do</word>
+							</text>
+						</example>
+						<example id="ex05">
+							<text>
+								<word>ech</word>
+								<inflectedHeadword>wunnen</inflectedHeadword>
+								<word>zu</word>
+								<word>Esch</word>
+							</text>
+							<gloss>
+								<word>ich</word>
+								<word>wohne</word>
+								<word>in</word>
+								<word>Esch</word>
+							</gloss>
+						</example>
+					</examples>
+				</meaning>
+			</grammaticalUnit>
+		</microStructure>
+	</entry>
+	<entry id="GOEN1">
+		<lemma nRuleForm="goe">goen</lemma>
+		<microStructure>
+			<partOfSpeech>VRB</partOfSpeech>
+			<grammaticalUnit>
+				<meaning id="GOEN1UNI1">
+					<examples count="2">
+						<example id="ex06">
+							<text>
+								<word>ech</word>
+								<word>sinn</word>
+								<word>haut</word>
+								<word>heem</word>
+								<inflectedHeadword>gaangen</inflectedHeadword>
+							</text>
+						</example>
+						<example id="ex10">
+							<text>
+								<word>ass</word>
+								<word>hien</word>
+								<word>heem</word>
+								<inflectedHeadword>gaangen</inflectedHeadword>
+								<word>?</word>
+							</text>
+						</example>
+					</examples>
+				</meaning>
+			</grammaticalUnit>
+		</microStructure>
+	</entry>
+	<entry id="GUTT1">
+		<lemma>gutt</lemma>
+		<microStructure>
+			<partOfSpeech>ADJ</partOfSpeech>
+			<grammaticalUnit>
+				<meaning id="GUTT1UNI1">
+					<examples count="3">
+						<example id="ex07">
+							<text>
+								<word>de</word>
+								<inflectedHeadword>gudde</inflectedHeadword>
+								<word>Mann</word>
+								<word>wunnt</word>
+								<word>zu</word>
+								<word>Esch</word>
+							</text>
+						</example>
+						<example id="ex08">
+							<text>
+								<word>eng</word>
+								<inflectedHeadword>gutt</inflectedHeadword>
+								<word>Fra</word>
+								<word>kuckt</word>
+								<word>de</word>
+								<word>Mann</word>
+							</text>
+						</example>
+						<example id="ex11">
+							<text>
+								<word>wéi</word>
+								<inflectedHeadword>gutt,</inflectedHeadword>
+								<word>du</word>
+								<word>wunns</word>
+								<word>zu</word>
+								<word>Esch</word>
+								<word>!</word>
+							</text>
+						</example>
+					</examples>
+				</meaning>
+			</grammaticalUnit>
+		</microStructure>
+	</entry>
+	<entry id="MANN1">
+		<lemma>Mann</lemma>
+		<microStructure>
+			<partOfSpeech gen="M">SUBST</partOfSpeech>
+			<grammaticalUnit>
+				<meaning id="MANN1UNI1">
+					<examples count="2">
+						<example id="ex09">
+							<text>
+								<word>kuck,</word>
+								<word>de</word>
+								<inflectedHeadword>Mann</inflectedHeadword>
+								<word>ass</word>
+								<word>do!</word>
+							</text>
+						</example>
+						<example id="ex12">
+							<text>
+								<word>hien</word>
+								<word>huet</word>
+								<word>de</word>
+								<inflectedHeadword>Mann</inflectedHeadword>
+								<word>gekuckt</word>
+							</text>
+						</example>
+					</examples>
+				</meaning>
+			</grammaticalUnit>
+		</microStructure>
+	</entry>
+</lod>

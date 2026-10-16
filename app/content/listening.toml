@@ -1,0 +1,600 @@
+# The listening part: short B1 recordings, each with its questions. The app reads this file
+# when it starts; restart it after an edit. Not reviewed by a native speaker.
+#
+# Every text here is written for this app; nothing is taken from INLL material. The marylux
+# voice reads each turn; the second speaker of an item is the same voice at a lower pitch.
+#
+# An item has an `id`, a `genre` (news, conversation or discussion), a `title_en` and
+# `level = "B1"`. [[item.speaker]] gives a speaker's `name`, shown before each of its turns,
+# and its `pitch` in semitones. [[item.turn]] is one turn of the script, `speaker` naming who
+# says it; a text may run over several lines. [[item.question]] follows the order of the
+# recording: `lb` is the question, `en` its English, `options` two or three answers shown as
+# A, B and C, `answer` the index of the right one from 0, and `why_en` the words of the script
+# that give it away. tests/test_listening.py checks every Luxembourgish word here against the
+# LOD dictionary.
+
+[[item]]
+id = "strooss-bus"
+genre = "news"
+title_en = "A road closed for works and a new bus line"
+level = "B1"
+
+[[item.speaker]]
+name = "Spriecherin"
+pitch = 0.0
+
+[[item.turn]]
+speaker = "Spriecherin"
+lb = """
+Moien, hei sinn d'Noriichten. Vu Méindeg u gëtt d'Strooss tëscht Esch a Belval fir dräi
+Wochen zougemaach, well do un de Waasserleitunge geschafft gëtt."""
+
+[[item.turn]]
+speaker = "Spriecherin"
+lb = """
+Wien mam Auto fiert, soll d'Autobunn huelen. Moies tëscht siwen an néng Auer muss een do awer
+mat méi Stau rechnen, seet d'Police."""
+
+[[item.turn]]
+speaker = "Spriecherin"
+lb = """
+Fir d'Leit ouni Auto gëtt et eng gutt Noriicht: Vum éischten Abrëll u fiert eng nei Buslinn vun
+Diddeleng iwwer Esch bis op Belval. De Bus fiert all Véierel Stonn, och samschdes."""
+
+[[item.turn]]
+speaker = "Spriecherin"
+lb = """
+Wéi iwwerall am Land ass de Bus gratis. D'Gemeng Esch freet d'Leit, hiren Auto méi dacks doheem ze
+loossen."""
+
+[[item.question]]
+id = "strooss-bus-q1"
+lb = "Wourëms geet et an dëser Noriicht?"
+en = "What is this news item about?"
+options = [
+  "Ëm en Accident op der Autobunn.",
+  "Ëm eng Strooss, déi zou ass, an eng nei Buslinn.",
+  "Ëm en neien Tram an der Stad.",
+]
+answer = 1
+why_en = "It opens with the road between Esch and Belval that is closed, then turns to \"eng nei Buslinn\"."
+
+[[item.question]]
+id = "strooss-bus-q2"
+lb = "Wéi laang bleift d'Strooss zou?"
+en = "How long does the road stay closed?"
+options = ["Zwou Wochen.", "Dräi Wochen.", "Dräi Méint."]
+answer = 1
+why_en = "\"fir dräi Wochen zougemaach\": closed for three weeks."
+
+[[item.question]]
+id = "strooss-bus-q3"
+lb = "Wéini gëtt et op der Autobunn méi Stau?"
+en = "When is there more traffic on the motorway?"
+options = ["Moies tëscht siwen an néng Auer.", "Owes tëscht fënnef a siwen Auer."]
+answer = 0
+why_en = "\"Moies tëscht siwen an néng Auer\": in the morning between seven and nine."
+
+[[item.question]]
+id = "strooss-bus-q4"
+lb = "Wou fiert déi nei Buslinn?"
+en = "Where does the new bus line run?"
+options = [
+  "Vun der Stad bis op de Findel.",
+  "Vun Ettelbréck bis op Dikrech.",
+  "Vun Diddeleng iwwer Esch bis op Belval.",
+]
+answer = 2
+why_en = "\"vun Diddeleng iwwer Esch bis op Belval\": from Dudelange via Esch to Belval."
+
+[[item.question]]
+id = "strooss-bus-q5"
+lb = "Wéi dacks fiert de Bus?"
+en = "How often does the bus run?"
+options = ["All Véierel Stonn.", "All hallef Stonn.", "All Stonn, mee net samschdes."]
+answer = 0
+why_en = "\"De Bus fiert all Véierel Stonn, och samschdes\": every quarter of an hour, Saturdays too."
+
+[[item]]
+id = "wieder-fest"
+genre = "news"
+title_en = "The weather for the weekend and a village festival"
+level = "B1"
+
+[[item.speaker]]
+name = "Spriecher"
+pitch = 0.0
+
+[[item.turn]]
+speaker = "Spriecher"
+lb = """
+An elo d'Wieder fir de Weekend. Freides reent et nach vill, virun allem am Norden vum Land, an et
+gëtt just eelef Grad."""
+
+[[item.turn]]
+speaker = "Spriecher"
+lb = """
+Samschdes kënnt d'Sonn erëm eraus, an et gëtt bis zu siwwenzéng Grad waarm. Sonndes bleift et
+dréchen, mee de Wand gëtt méi staark."""
+
+[[item.turn]]
+speaker = "Spriecher"
+lb = """
+Dat ass gutt Wieder fir d'Duerffest zu Gaasperech. Et fänkt samschdes um dräi Auer nomëttes un,
+mat Musek, engem Maart a Spiller fir d'Kanner."""
+
+[[item.turn]]
+speaker = "Spriecher"
+lb = """
+Den Entrée ass gratis. D'Suen vum Iessen a vum Gedrénks ginn un d'Spillschoul vum Duerf, fir
+nei Spiller am Gaart."""
+
+[[item.question]]
+id = "wieder-fest-q1"
+lb = "Wéi ass d'Wieder e Freideg?"
+en = "What is the weather like on Friday?"
+options = ["D'Sonn schéngt.", "Et schneit.", "Et reent vill."]
+answer = 2
+why_en = "\"Freides reent et nach vill\": on Friday it still rains a lot."
+
+[[item.question]]
+id = "wieder-fest-q2"
+lb = "Wéi waarm gëtt et e Samschdeg?"
+en = "How warm does it get on Saturday?"
+options = ["Bis zu eelef Grad.", "Bis zu siwwenzéng Grad."]
+answer = 1
+why_en = "\"bis zu siwwenzéng Grad waarm\": up to seventeen degrees; eleven degrees is Friday."
+
+[[item.question]]
+id = "wieder-fest-q3"
+lb = "Wat ännert sech e Sonndeg?"
+en = "What changes on Sunday?"
+options = ["Et reent de ganzen Dag.", "De Wand gëtt méi staark.", "Et gëtt méi kal."]
+answer = 1
+why_en = "\"Sonndes bleift et dréchen, mee de Wand gëtt méi staark\": dry, but windier."
+
+[[item.question]]
+id = "wieder-fest-q4"
+lb = "Wéini fänkt d'Fest un?"
+en = "When does the festival start?"
+options = ["Samschdes um dräi Auer nomëttes.", "Sonndes um dräi Auer nomëttes.", "Samschdes um néng Auer moies."]
+answer = 0
+why_en = "\"Et fänkt samschdes um dräi Auer nomëttes un\": Saturday at three in the afternoon."
+
+[[item.question]]
+id = "wieder-fest-q5"
+lb = "Fir wat sinn d'Suen vum Iessen a vum Gedrénks?"
+en = "What is the money from the food and drinks for?"
+options = ["Fir de Fussballclub vum Duerf.", "Fir d'Spillschoul vum Duerf."]
+answer = 1
+why_en = "\"D'Suen ... ginn un d'Spillschoul vum Duerf\": the money goes to the village nursery school."
+
+[[item]]
+id = "gemeng-adress"
+genre = "conversation"
+title_en = "At the town hall to change an address"
+level = "B1"
+
+[[item.speaker]]
+name = "Beamtin"
+pitch = 0.0
+
+[[item.speaker]]
+name = "Client"
+pitch = -4.0
+
+[[item.turn]]
+speaker = "Beamtin"
+lb = "Moien, wat kann ech fir Iech maachen?"
+
+[[item.turn]]
+speaker = "Client"
+lb = """
+Moien, Madamm. Ech sinn virun engem Mount vun Esch op Diddeleng geplënnert, an elo wëll ech meng nei
+Adress umellen."""
+
+[[item.turn]]
+speaker = "Beamtin"
+lb = """
+Dat geet séier. Hutt Dir Är Identitéitskaart dobäi, an och de Kontrakt vun der Wunneng?"""
+
+[[item.turn]]
+speaker = "Client"
+lb = """
+D'Identitéitskaart hunn ech hei. Mee de Kontrakt hunn ech doheem vergiess. Muss ech dann nach
+eng Kéier kommen?"""
+
+[[item.turn]]
+speaker = "Beamtin"
+lb = """
+Net onbedéngt. Ech maachen haut alles fäerdeg, an Dir schéckt mir de Kontrakt bis e Freideg per
+E-Mail. Hei ass nach e Formulaire. Schreift wann ech gelift och drop, ob Är Kanner mat Iech
+geplënnert sinn."""
+
+[[item.turn]]
+speaker = "Client"
+lb = """
+Jo, meng Duechter ass mat geplënnert. Si ass véier Joer al. Muss ech si och an der Spillschoul
+umellen?"""
+
+[[item.turn]]
+speaker = "Beamtin"
+lb = """
+Jo, dat maacht Dir am beschten direkt hei am Gemengenhaus, eng Etage méi héich. Mee dee Büro ass
+haut just bis hallwer fënnef op."""
+
+[[item.turn]]
+speaker = "Client"
+lb = "Merci, dann ginn ech elo direkt erop."
+
+[[item.question]]
+id = "gemeng-adress-q1"
+lb = "Firwat ass de Client op der Gemeng?"
+en = "Why is the client at the town hall?"
+options = [
+  "Hie wëll seng nei Adress umellen.",
+  "Hie brauch eng nei Identitéitskaart.",
+  "Hie sicht eng Wunneng zu Esch.",
+]
+answer = 0
+why_en = "\"elo wëll ech meng nei Adress umellen\": he wants to register his new address."
+
+[[item.question]]
+id = "gemeng-adress-q2"
+lb = "Wat huet de Client doheem vergiess?"
+en = "What did the client forget at home?"
+options = ["Seng Identitéitskaart.", "De Kontrakt vu senger Wunneng."]
+answer = 1
+why_en = "\"de Kontrakt hunn ech doheem vergiess\"; the identity card he has with him."
+
+[[item.question]]
+id = "gemeng-adress-q3"
+lb = "Wat soll de Client bis e Freideg maachen?"
+en = "What should the client do by Friday?"
+options = [
+  "Nach eng Kéier op d'Gemeng kommen.",
+  "Säi Formulaire op d'Post bréngen.",
+  "De Kontrakt per E-Mail schécken.",
+]
+answer = 2
+why_en = "\"Dir schéckt mir de Kontrakt bis e Freideg per E-Mail\": he sends it by email."
+
+[[item.question]]
+id = "gemeng-adress-q4"
+lb = "Bis wéini ass de Büro fir d'Spillschoul haut op?"
+en = "Until when is the office for the nursery school open today?"
+options = ["Bis véier Auer.", "Bis hallwer fënnef.", "Bis sechs Auer owes."]
+answer = 1
+why_en = "\"dee Büro ass haut just bis hallwer fënnef op\": until half past four."
+
+[[item]]
+id = "kaddo"
+genre = "conversation"
+title_en = "Buying a present in a shop"
+level = "B1"
+
+[[item.speaker]]
+name = "Verkeeferin"
+pitch = 0.0
+
+[[item.speaker]]
+name = "Client"
+pitch = -4.0
+
+[[item.turn]]
+speaker = "Verkeeferin"
+lb = "Moien! Kann ech Iech hëllefen?"
+
+[[item.turn]]
+speaker = "Client"
+lb = """
+Jo, gär. Ech sichen e Kaddo fir meng Mamm. Si gëtt e Samschdeg siwwenzeg, a mir maachen e grousst
+Fest an der Famill."""
+
+[[item.turn]]
+speaker = "Verkeeferin"
+lb = "Wat mécht Är Mamm dann am léifsten? Liest si gär, oder ass si éischter am Gaart?"
+
+[[item.turn]]
+speaker = "Client"
+lb = "Si ass all Dag am Gaart, an duerno drénkt si gär eng Taass Téi."
+
+[[item.turn]]
+speaker = "Verkeeferin"
+lb = """
+Ech hätt hei eng Taass mat Blummen, oder dëse Kuerf mat dräi Zorten Téi. D'Taass
+kascht zwanzeg Euro, de Kuerf fënnefandrësseg."""
+
+[[item.turn]]
+speaker = "Client"
+lb = """
+De Kuerf gefält mir besser, mee hien ass mir e bësse ze deier. Ech wollt net méi wéi drësseg Euro
+ausginn."""
+
+[[item.turn]]
+speaker = "Verkeeferin"
+lb = """
+Da maache mir Iech e Kuerf mat just zwou Zorten Téi. Dee kascht siwenanzwanzeg Euro. Soll ech
+en als Kaddo apaken?"""
+
+[[item.turn]]
+speaker = "Client"
+lb = "Jo, wann ech gelift. A wann en hir net gefält, kann ech en dann ëmtauschen?"
+
+[[item.turn]]
+speaker = "Verkeeferin"
+lb = "Natierlech. Dat geet bis véierzéng Deeg no haut."
+
+[[item.question]]
+id = "kaddo-q1"
+lb = "Fir wien sicht de Client e Kaddo?"
+en = "Who is the client looking for a present for?"
+options = ["Fir seng Mamm.", "Fir seng Duechter.", "Fir eng Frëndin."]
+answer = 0
+why_en = "\"Ech sichen e Kaddo fir meng Mamm\": for his mother, who turns seventy."
+
+[[item.question]]
+id = "kaddo-q2"
+lb = "Wat mécht d'Mamm gär?"
+en = "What does the mother like to do?"
+options = ["Si liest vill Bicher.", "Si schafft am Gaart an drénkt Téi."]
+answer = 1
+why_en = "\"Si ass all Dag am Gaart, an duerno drénkt si gär eng Taass Téi.\""
+
+[[item.question]]
+id = "kaddo-q3"
+lb = "Wéi vill kascht de Kuerf, deen de Client kaaft?"
+en = "How much does the basket the client buys cost?"
+options = ["Fënnefandrësseg Euro.", "Drësseg Euro.", "Siwenanzwanzeg Euro."]
+answer = 2
+why_en = "The basket with just two kinds of tea: \"Dee kascht siwenanzwanzeg Euro.\""
+
+[[item.question]]
+id = "kaddo-q4"
+lb = "Wéi laang kann de Client de Kaddo ëmtauschen?"
+en = "How long can the client exchange the present?"
+options = ["Bis e Samschdeg.", "Véierzéng Deeg.", "Ee Mount."]
+answer = 1
+why_en = "\"Dat geet bis véierzéng Deeg no haut\": for fourteen days from today."
+
+[[item]]
+id = "doheem-schaffen"
+genre = "discussion"
+title_en = "Two colleagues on working from home"
+level = "B1"
+
+[[item.speaker]]
+name = "Mataarbechterin"
+pitch = 0.0
+
+[[item.speaker]]
+name = "Mataarbechter"
+pitch = -4.0
+
+[[item.turn]]
+speaker = "Mataarbechterin"
+lb = "So mol, schaffs du nach ëmmer zwee Deeg an der Woch doheem?"
+
+[[item.turn]]
+speaker = "Mataarbechter"
+lb = """
+Jo, méindes a freides. Dat ass fir mech ideal, well ech dann net vun Ettelbréck an d'Stad muss
+fueren. Mam Zuch sinn ech all Kéier eng Stonn ënnerwee, an owes ass den Zuch dacks voll."""
+
+[[item.turn]]
+speaker = "Mataarbechterin"
+lb = """
+Dat verstinn ech. Mee ech schaffe léiwer hei am Büro. Doheem sinn d'Kanner an den Hond, an do
+kann ech mech net gutt konzentréieren."""
+
+[[item.turn]]
+speaker = "Mataarbechter"
+lb = """
+Bei mir ass et ëmgedréint. Am Büro schwätze mir vill, an ech maache manner. Doheem schaffen ech
+moies vun aacht bis zwielef Auer ouni Paus, an duerno ginn ech eng hallef Stonn spadséieren."""
+
+[[item.turn]]
+speaker = "Mataarbechterin"
+lb = """
+Mir feelen awer d'Gespréicher mat de Kolleegen, wann ech doheem sinn. Déi beschten Iddien hu mir
+jo bei engem Kaffi an der Kichen."""
+
+[[item.turn]]
+speaker = "Mataarbechter"
+lb = """
+Do hues de Recht. Dofir fannen ech zwee Deeg genuch. Méi wéilt ech net, soss gesinn ech iech bal
+net méi."""
+
+[[item.turn]]
+speaker = "Mataarbechterin"
+lb = """
+De Chef wëll elo, datt mir all dënschdes hei sinn, fir eng Versammlung mat der ganzer Ekipp. Wat
+mengs du dovun?"""
+
+[[item.turn]]
+speaker = "Mataarbechter"
+lb = """
+Dat ass eng gutt Iddi. Da weess jiddereen, wat déi aner maachen, an ech kann dënschdes de Mëtteg
+mat iech iessen. Just e Méindeg oder e Freideg wéilt ech net."""
+
+[[item.question]]
+id = "doheem-schaffen-q1"
+lb = "Iwwer wat schwätzen déi zwee Mataarbechter?"
+en = "What are the two colleagues talking about?"
+options = ["Iwwer eng Rees an d'Ausland.", "Iwwer d'Aarbecht doheem an am Büro.", "Iwwer hir Vakanz am Summer."]
+answer = 1
+why_en = "The talk starts with \"zwee Deeg an der Woch doheem\" and compares home with the office."
+
+[[item.question]]
+id = "doheem-schaffen-q2"
+lb = "Wéi vill Deeg an der Woch schafft de Mataarbechter doheem?"
+en = "How many days a week does the colleague work from home?"
+options = ["Een Dag.", "Zwee Deeg.", "Dräi Deeg."]
+answer = 1
+why_en = "\"zwee Deeg an der Woch doheem\" - \"Jo, méindes a freides.\""
+
+[[item.question]]
+id = "doheem-schaffen-q3"
+lb = "Wou wunnt de Mataarbechter?"
+en = "Where does the colleague live?"
+options = ["An der Stad.", "Zu Dikrech.", "Zu Ettelbréck."]
+answer = 2
+why_en = "\"well ech dann net vun Ettelbréck an d'Stad muss fueren\": he lives in Ettelbruck."
+
+[[item.question]]
+id = "doheem-schaffen-q4"
+lb = "Firwat schafft d'Mataarbechterin léiwer am Büro?"
+en = "Why does the colleague prefer to work in the office?"
+options = ["Well si sech doheem net gutt konzentréiere kann.", "Well si no beim Büro wunnt."]
+answer = 0
+why_en = "\"Doheem sinn d'Kanner an den Hond, an do kann ech mech net gutt konzentréieren.\""
+
+[[item.question]]
+id = "doheem-schaffen-q5"
+lb = "Wat mécht de Mataarbechter doheem no der Aarbecht vum Moien?"
+en = "What does the colleague do at home after his morning work?"
+options = ["Hie kacht fir d'Kanner.", "Hie fiert an de Büro.", "Hie geet spadséieren."]
+answer = 2
+why_en = "\"duerno ginn ech eng hallef Stonn spadséieren\": he goes for a walk for half an hour."
+
+[[item.question]]
+id = "doheem-schaffen-q6"
+lb = "Wat mengt de Mataarbechter iwwer méi wéi zwee Deeg doheem?"
+en = "What does the colleague think of more than two days at home?"
+options = ["Hie fënnt dat ze vill.", "Hie wéilt dat gär."]
+answer = 0
+why_en = "\"Méi wéilt ech net, soss gesinn ech iech bal net méi.\""
+
+[[item.question]]
+id = "doheem-schaffen-q7"
+lb = "Wat wëll de Chef?"
+en = "What does the boss want?"
+options = [
+  "Datt jiddereen dënschdes am Büro ass.",
+  "Datt jiddereen e Freideg doheem schafft.",
+  "Datt d'Ekipp all Dag zesummen iesst.",
+]
+answer = 0
+why_en = "\"datt mir all dënschdes hei sinn, fir eng Versammlung mat der ganzer Ekipp\"."
+
+[[item]]
+id = "schlof"
+genre = "discussion"
+title_en = "A radio talk with a doctor about sleep"
+level = "B1"
+
+[[item.speaker]]
+name = "Journalistin"
+pitch = 0.0
+
+[[item.speaker]]
+name = "Dokter"
+pitch = -4.0
+
+[[item.turn]]
+speaker = "Journalistin"
+lb = """
+Gudden Owend a wëllkomm. Haut schwätze mir iwwer de Schlof. Bei mir ass en Dokter aus dem Spidol
+zu Esch. Här Dokter, wéi vill Stonne Schlof brauch een?"""
+
+[[item.turn]]
+speaker = "Dokter"
+lb = """
+Dat hänkt vum Alter of. E Kand brauch zéng bis zwielef Stonnen, en Erwuessenen tëscht siwen an
+néng Stonnen. Vill Leit schlofen awer just fënnef oder sechs Stonnen."""
+
+[[item.turn]]
+speaker = "Journalistin"
+lb = "A firwat schlofe mir esou wéineg?"
+
+[[item.turn]]
+speaker = "Dokter"
+lb = """
+Et gëtt vill Grënn. D'Leit schaffe laang, si hunn Stress, an owes kucke si nach laang op den
+Handy. D'Liicht vum Handy seet dem Kierper, datt et nach Dag ass."""
+
+[[item.turn]]
+speaker = "Journalistin"
+lb = "Wat rot Dir eise Leit, déi schlecht schlofen?"
+
+[[item.turn]]
+speaker = "Dokter"
+lb = """
+Als éischt: all Dag zur selwechter Zäit an d'Bett goen, och um Weekend. Dann eng Stonn virum
+Schlofe keen Handy a kee Computer méi. An no véier Auer nomëttes kee Kaffi méi drénken."""
+
+[[item.turn]]
+speaker = "Journalistin"
+lb = "An de Sport? Hëlleft dat?"
+
+[[item.turn]]
+speaker = "Dokter"
+lb = """
+Jo, Sport hëlleft vill, awer net spéit owes. Am beschten ass eng hallef Stonn am Dag zu Fouss oder
+mam Vëlo, zum Beispill op d'Aarbecht."""
+
+[[item.turn]]
+speaker = "Journalistin"
+lb = "A wéini soll een zum Dokter goen?"
+
+[[item.turn]]
+speaker = "Dokter"
+lb = """
+Wann een méi wéi dräi Woche schlecht schléift an den Dag iwwer ëmmer midd ass. Da musse mir
+kucken, wat d'Ursaach ass."""
+
+[[item.question]]
+id = "schlof-q1"
+lb = "Iwwer wat ass d'Gespréich?"
+en = "What is the talk about?"
+options = ["Iwwer gesond Iessen.", "Iwwer de Schlof.", "Iwwer d'Aarbecht am Spidol."]
+answer = 1
+why_en = "\"Haut schwätze mir iwwer de Schlof\": today we talk about sleep."
+
+[[item.question]]
+id = "schlof-q2"
+lb = "Wéi vill Stonne Schlof brauch en Erwuessenen?"
+en = "How many hours of sleep does an adult need?"
+options = ["Fënnef bis sechs Stonnen.", "Siwen bis néng Stonnen.", "Zéng bis zwielef Stonnen."]
+answer = 1
+why_en = "\"en Erwuessenen tëscht siwen an néng Stonnen\"; ten to twelve is for a child."
+
+[[item.question]]
+id = "schlof-q3"
+lb = "Firwat schléift een schlecht, wann een owes op den Handy kuckt?"
+en = "Why do you sleep badly when you look at your phone in the evening?"
+options = ["Well d'Liicht dem Kierper seet, datt et nach Dag ass.", "Well den Handy ze vill Kaméidi mécht."]
+answer = 0
+why_en = "\"D'Liicht vum Handy seet dem Kierper, datt et nach Dag ass.\""
+
+[[item.question]]
+id = "schlof-q4"
+lb = "Wat rot den Dokter fir de Weekend?"
+en = "What does the doctor advise for the weekend?"
+options = ["Méi laang schlofen.", "Zur selwechter Zäit an d'Bett goen wéi soss.", "Méi Sport maachen."]
+answer = 1
+why_en = "\"all Dag zur selwechter Zäit an d'Bett goen, och um Weekend\"."
+
+[[item.question]]
+id = "schlof-q5"
+lb = "Bis wéini soll ee Kaffi drénken?"
+en = "Until when should you drink coffee?"
+options = ["Bis véier Auer nomëttes.", "Bis sechs Auer owes.", "Bis zwielef Auer mëttes."]
+answer = 0
+why_en = "\"no véier Auer nomëttes kee Kaffi méi drénken\": no coffee after four in the afternoon."
+
+[[item.question]]
+id = "schlof-q6"
+lb = "Wat seet den Dokter iwwer de Sport?"
+en = "What does the doctor say about sport?"
+options = ["Sport ass owes am beschten.", "Sport hëlleft net beim Schlof.", "Sport hëlleft, mee net spéit owes."]
+answer = 2
+why_en = "\"Sport hëlleft vill, awer net spéit owes.\""
+
+[[item.question]]
+id = "schlof-q7"
+lb = "Wéini soll een zum Dokter goen?"
+en = "When should you see a doctor?"
+options = ["No enger schlechter Nuecht.", "Wann een méi wéi dräi Woche schlecht schléift."]
+answer = 1
+why_en = "\"Wann een méi wéi dräi Woche schlecht schléift an den Dag iwwer ëmmer midd ass.\""
